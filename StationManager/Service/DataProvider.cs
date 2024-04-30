@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace StationManager.Service
 {
-    public class DataProvide
+    public class DataProvider
     {
-        private static DataProvide instance;
-        public static DataProvide Instance
+        private static DataProvider instance;
+        public static DataProvider Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new DataProvide();
+                    instance = new DataProvider();
                 }
                 return instance;
             }
             private set { instance = value; }
         }
-        private DataProvide() { }
+        private DataProvider() { }
         string connectionStr = "Data Source=sql.bsite.net\\MSSQL2016;Initial Catalog=minhdtbz_TaskManager;User ID=minhdtbz_TaskManager;Password=minh;Persist Security Info=True;Encrypt=false;";
         public bool TestConnection()
         {
@@ -123,15 +123,15 @@ namespace StationManager.Service
     {
         public static DataTable ExcuteQuery(this object obj, string query, object[] parameter = null)
         {
-            return DataProvide.Instance.ExcuteQuery(query, parameter);
+            return DataProvider.Instance.ExcuteQuery(query, parameter);
         }
         public static int ExcuteNonQuery(this object obj, string query, object[] parameter = null)
         {
-            return DataProvide.Instance.ExcuteNonQuery(query, parameter);
+            return DataProvider.Instance.ExcuteNonQuery(query, parameter);
         }
         public static object ExcuteScalar(this object obj, string query, object[] parameter = null)
         {
-            return DataProvide.Instance.ExcuteScalar(query, parameter);
+            return DataProvider.Instance.ExcuteScalar(query, parameter);
         }
     }
 }
