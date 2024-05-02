@@ -1,3 +1,5 @@
+using StationManager.Forms;
+
 namespace StationManager
 {
     internal static class Program
