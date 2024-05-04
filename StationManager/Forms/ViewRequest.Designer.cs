@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewRequest));
             dtgvShow = new DataGridView();
             lbRequest = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -35,6 +37,8 @@
             btnToday = new Button();
             btnNoView = new Button();
             btnCountNoView = new Button();
+            dtpEnd = new DateTimePicker();
+            dtpStart = new DateTimePicker();
             tableLayoutPanel2 = new TableLayoutPanel();
             txbStatus = new TextBox();
             txbTimeSent = new TextBox();
@@ -47,6 +51,9 @@
             label5 = new Label();
             txbSendCode = new TextBox();
             btnConfirm = new Button();
+            btnShowAll = new Button();
+            btnErrorTime = new Button();
+            ttError = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dtgvShow).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -57,11 +64,11 @@
             dtgvShow.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvShow.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgvShow.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvShow.Location = new Point(108, 156);
+            dtgvShow.Location = new Point(39, 163);
             dtgvShow.Name = "dtgvShow";
             dtgvShow.ReadOnly = true;
             dtgvShow.RowHeadersWidth = 51;
-            dtgvShow.Size = new Size(718, 363);
+            dtgvShow.Size = new Size(931, 363);
             dtgvShow.TabIndex = 3;
             // 
             // lbRequest
@@ -69,7 +76,7 @@
             lbRequest.AutoSize = true;
             lbRequest.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbRequest.ForeColor = Color.Red;
-            lbRequest.Location = new Point(336, 9);
+            lbRequest.Location = new Point(267, 16);
             lbRequest.Name = "lbRequest";
             lbRequest.Size = new Size(312, 38);
             lbRequest.TabIndex = 4;
@@ -77,27 +84,30 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.81884F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.18116F));
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.2008F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.7992F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
             tableLayoutPanel1.Controls.Add(btnCountToday, 1, 1);
             tableLayoutPanel1.Controls.Add(btnToday, 1, 0);
             tableLayoutPanel1.Controls.Add(btnNoView, 0, 0);
             tableLayoutPanel1.Controls.Add(btnCountNoView, 0, 1);
-            tableLayoutPanel1.Location = new Point(108, 74);
+            tableLayoutPanel1.Controls.Add(dtpEnd, 2, 1);
+            tableLayoutPanel1.Controls.Add(dtpStart, 2, 0);
+            tableLayoutPanel1.Location = new Point(39, 82);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 56.57895F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 43.42105F));
-            tableLayoutPanel1.Size = new Size(718, 76);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 49.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50.6666679F));
+            tableLayoutPanel1.Size = new Size(831, 75);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // btnCountToday
             // 
             btnCountToday.Dock = DockStyle.Fill;
-            btnCountToday.Location = new Point(360, 46);
+            btnCountToday.Location = new Point(294, 40);
             btnCountToday.Name = "btnCountToday";
-            btnCountToday.Size = new Size(355, 27);
+            btnCountToday.Size = new Size(283, 32);
             btnCountToday.TabIndex = 3;
             btnCountToday.Text = "0";
             btnCountToday.UseVisualStyleBackColor = true;
@@ -108,9 +118,9 @@
             btnToday.BackColor = Color.IndianRed;
             btnToday.Dock = DockStyle.Fill;
             btnToday.ForeColor = SystemColors.ButtonFace;
-            btnToday.Location = new Point(360, 3);
+            btnToday.Location = new Point(294, 3);
             btnToday.Name = "btnToday";
-            btnToday.Size = new Size(355, 37);
+            btnToday.Size = new Size(283, 31);
             btnToday.TabIndex = 1;
             btnToday.Text = "Yêu cầu hôm nay";
             btnToday.UseVisualStyleBackColor = false;
@@ -123,7 +133,7 @@
             btnNoView.ForeColor = SystemColors.ButtonFace;
             btnNoView.Location = new Point(3, 3);
             btnNoView.Name = "btnNoView";
-            btnNoView.Size = new Size(351, 37);
+            btnNoView.Size = new Size(285, 31);
             btnNoView.TabIndex = 0;
             btnNoView.Text = "Yêu cầu chưa xem";
             btnNoView.UseVisualStyleBackColor = false;
@@ -132,13 +142,31 @@
             // btnCountNoView
             // 
             btnCountNoView.Dock = DockStyle.Fill;
-            btnCountNoView.Location = new Point(3, 46);
+            btnCountNoView.Location = new Point(3, 40);
             btnCountNoView.Name = "btnCountNoView";
-            btnCountNoView.Size = new Size(351, 27);
+            btnCountNoView.Size = new Size(285, 32);
             btnCountNoView.TabIndex = 2;
             btnCountNoView.Text = "0";
             btnCountNoView.UseVisualStyleBackColor = true;
             btnCountNoView.Click += btnCountNoView_Click;
+            // 
+            // dtpEnd
+            // 
+            dtpEnd.Format = DateTimePickerFormat.Short;
+            dtpEnd.Location = new Point(583, 40);
+            dtpEnd.Name = "dtpEnd";
+            dtpEnd.Size = new Size(245, 27);
+            dtpEnd.TabIndex = 5;
+            dtpEnd.ValueChanged += dtpEnd_ValueChanged;
+            // 
+            // dtpStart
+            // 
+            dtpStart.Format = DateTimePickerFormat.Short;
+            dtpStart.Location = new Point(583, 3);
+            dtpStart.Name = "dtpStart";
+            dtpStart.Size = new Size(245, 27);
+            dtpStart.TabIndex = 4;
+            dtpStart.ValueChanged += dtpStart_ValueChanged;
             // 
             // tableLayoutPanel2
             // 
@@ -155,7 +183,7 @@
             tableLayoutPanel2.Controls.Add(label4, 0, 3);
             tableLayoutPanel2.Controls.Add(label5, 0, 4);
             tableLayoutPanel2.Controls.Add(txbSendCode, 1, 0);
-            tableLayoutPanel2.Location = new Point(867, 156);
+            tableLayoutPanel2.Location = new Point(1049, 163);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 5;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 47.1428566F));
@@ -271,7 +299,7 @@
             btnConfirm.BackColor = Color.IndianRed;
             btnConfirm.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConfirm.ForeColor = SystemColors.ButtonHighlight;
-            btnConfirm.Location = new Point(1124, 538);
+            btnConfirm.Location = new Point(1306, 545);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(136, 41);
             btnConfirm.TabIndex = 7;
@@ -279,11 +307,33 @@
             btnConfirm.UseVisualStyleBackColor = false;
             btnConfirm.Click += btnConfirm_Click;
             // 
+            // btnShowAll
+            // 
+            btnShowAll.Location = new Point(876, 85);
+            btnShowAll.Name = "btnShowAll";
+            btnShowAll.Size = new Size(94, 67);
+            btnShowAll.TabIndex = 8;
+            btnShowAll.Text = "Xem tất cả";
+            btnShowAll.UseVisualStyleBackColor = true;
+            btnShowAll.Click += btnShowAll_Click;
+            // 
+            // btnErrorTime
+            // 
+            btnErrorTime.Image = (Image)resources.GetObject("btnErrorTime.Image");
+            btnErrorTime.Location = new Point(976, 87);
+            btnErrorTime.Name = "btnErrorTime";
+            btnErrorTime.Size = new Size(33, 29);
+            btnErrorTime.TabIndex = 9;
+            btnErrorTime.UseVisualStyleBackColor = true;
+            btnErrorTime.Visible = false;
+            // 
             // ViewRequest
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1366, 591);
+            ClientSize = new Size(1464, 591);
+            Controls.Add(btnErrorTime);
+            Controls.Add(btnShowAll);
             Controls.Add(btnConfirm);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
@@ -320,5 +370,10 @@
         private Label label5;
         private TextBox txbSendCode;
         private Button btnConfirm;
+        private DateTimePicker dtpEnd;
+        private DateTimePicker dtpStart;
+        private Button btnShowAll;
+        private Button btnErrorTime;
+        private ToolTip ttError;
     }
 }
