@@ -49,7 +49,7 @@
             tbEmpID.Location = new Point(12, 226);
             tbEmpID.Name = "tbEmpID";
             tbEmpID.Size = new Size(146, 23);
-            tbEmpID.TabIndex = 10;
+            tbEmpID.TabIndex = 5;
             // 
             // lbEmpID
             // 
@@ -66,7 +66,7 @@
             tbEmail.Location = new Point(207, 166);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(146, 23);
-            tbEmail.TabIndex = 11;
+            tbEmail.TabIndex = 4;
             // 
             // lbEmail
             // 
@@ -83,7 +83,7 @@
             tbUsername.Location = new Point(12, 166);
             tbUsername.Name = "tbUsername";
             tbUsername.Size = new Size(146, 23);
-            tbUsername.TabIndex = 12;
+            tbUsername.TabIndex = 3;
             // 
             // lbUsername
             // 
@@ -100,7 +100,7 @@
             tbPassword.Location = new Point(207, 102);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(146, 23);
-            tbPassword.TabIndex = 13;
+            tbPassword.TabIndex = 2;
             // 
             // lbPassword
             // 
@@ -118,7 +118,7 @@
             tbLoginID.Location = new Point(12, 102);
             tbLoginID.Name = "tbLoginID";
             tbLoginID.Size = new Size(146, 23);
-            tbLoginID.TabIndex = 14;
+            tbLoginID.TabIndex = 1;
             // 
             // lbLoginID
             // 
@@ -141,12 +141,17 @@
             // 
             // btnTaoTaiKhoan
             // 
-            btnTaoTaiKhoan.Location = new Point(21, 292);
+            btnTaoTaiKhoan.BackColor = Color.FromArgb(138, 196, 75);
+            btnTaoTaiKhoan.FlatAppearance.BorderColor = Color.FromArgb(78, 112, 43);
+            btnTaoTaiKhoan.FlatStyle = FlatStyle.Flat;
+            btnTaoTaiKhoan.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTaoTaiKhoan.ForeColor = Color.White;
+            btnTaoTaiKhoan.Location = new Point(12, 280);
             btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
-            btnTaoTaiKhoan.Size = new Size(109, 23);
+            btnTaoTaiKhoan.Size = new Size(109, 35);
             btnTaoTaiKhoan.TabIndex = 16;
             btnTaoTaiKhoan.Text = "Tạo tài khoản";
-            btnTaoTaiKhoan.UseVisualStyleBackColor = true;
+            btnTaoTaiKhoan.UseVisualStyleBackColor = false;
             btnTaoTaiKhoan.Click += btnTaoTaiKhoan_Click;
             // 
             // AddAccount
