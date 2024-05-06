@@ -24,6 +24,8 @@ namespace StationManager.Forms
             listUserAccount = AccountDAO.Instance.getListUserAccount();
             cbPhanLoai.SelectedIndex = 0;
             LoadInforBinding();
+            RegAccount reg = new RegAccount();
+            reg.Show();
         }
         private void BindingControl(Control control, string datamember)
         {
@@ -46,6 +48,11 @@ namespace StationManager.Forms
             ClearBinding(tbUsername);
             ClearBinding(tbEmail);
             ClearBinding(tbEmpID);
+        }
+        private void refreshListAccount()
+        {
+            listEmployeeAccount = AccountDAO.Instance.getListEmployeeAccount();
+            listUserAccount = AccountDAO.Instance.getListUserAccount();
         }
         private void ClearBinding(Control control)
         {
@@ -89,8 +96,7 @@ namespace StationManager.Forms
             if (isSucceed)
             {
                 MessageBox.Show("Cập nhật thành công");
-                listEmployeeAccount = AccountDAO.Instance.getListEmployeeAccount();
-                listUserAccount = AccountDAO.Instance.getListUserAccount();
+                refreshListAccount();
                 cbPhanLoai_SelectedIndexChanged(sender, e);
             }
             else
@@ -101,11 +107,21 @@ namespace StationManager.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            using(AddAccount addAccount = new AddAccount(listEmployeeAccount))
+            using (AddAccount addAccount = new AddAccount(listEmployeeAccount.Concat(listUserAccount).ToList()))
             {
                 addAccount.ShowDialog();
                 this.listEmployeeAccount = AccountDAO.Instance.getListEmployeeAccount();
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string loginID = tbLoginID.Text;
+            bool isDisable = AccountDAO.Instance.disableAccount(loginID);
+            if(isDisable) 
+                { MessageBox.Show("Vô hiệu tài khoản thành công"); refreshListAccount(); cbPhanLoai_SelectedIndexChanged(sender, e); }
+            else 
+                { MessageBox.Show("Vô hiệu tài khoản thất bại"); }
         }
     }
 }

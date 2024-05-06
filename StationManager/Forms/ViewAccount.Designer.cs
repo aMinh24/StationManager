@@ -51,6 +51,7 @@
             tbEmpID = new TextBox();
             btnEdit = new Button();
             btnAdd = new Button();
+            btnDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvAccount).BeginInit();
             SuspendLayout();
             // 
@@ -143,6 +144,7 @@
             // lbPhanLoai
             // 
             lbPhanLoai.AutoSize = true;
+            lbPhanLoai.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbPhanLoai.Location = new Point(782, 33);
             lbPhanLoai.Name = "lbPhanLoai";
             lbPhanLoai.Size = new Size(56, 15);
@@ -151,8 +153,10 @@
             // 
             // cbPhanLoai
             // 
+            cbPhanLoai.BackColor = Color.White;
             cbPhanLoai.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPhanLoai.FlatStyle = FlatStyle.Flat;
+            cbPhanLoai.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbPhanLoai.FormattingEnabled = true;
             cbPhanLoai.Items.AddRange(new object[] { "Khách hàng", "Nhân viên" });
             cbPhanLoai.Location = new Point(844, 30);
@@ -252,31 +256,56 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(958, 323);
+            btnEdit.BackColor = Color.FromArgb(71, 142, 204);
+            btnEdit.FlatAppearance.BorderColor = Color.FromArgb(63, 126, 182);
+            btnEdit.FlatStyle = FlatStyle.Flat;
+            btnEdit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(920, 317);
             btnEdit.Margin = new Padding(3, 2, 3, 2);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(108, 22);
+            btnEdit.Size = new Size(108, 32);
             btnEdit.TabIndex = 6;
             btnEdit.Text = "Cập nhật";
-            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(782, 323);
+            btnAdd.BackColor = Color.FromArgb(97, 126, 140);
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(782, 384);
             btnAdd.Margin = new Padding(3, 2, 3, 2);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(159, 22);
+            btnAdd.Size = new Size(161, 32);
             btnAdd.TabIndex = 5;
             btnAdd.Text = "Tạo tài khoản nhân viên";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.FromArgb(240, 68, 56);
+            btnDelete.FlatAppearance.BorderColor = Color.FromArgb(63, 126, 182);
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(782, 317);
+            btnDelete.Margin = new Padding(3, 2, 3, 2);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(108, 32);
+            btnDelete.TabIndex = 6;
+            btnDelete.Text = "Vô hiệu hóa";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // ViewAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1118, 436);
+            Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
             Controls.Add(tbEmpID);
@@ -321,5 +350,6 @@
         private DataGridViewTextBoxColumn EmpID;
         private Button btnEdit;
         private Button btnAdd;
+        private Button btnDelete;
     }
 }

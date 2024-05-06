@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace StationManager.Forms
 {
-    public partial class AddAccount : Form
+    public partial class RegAccount : Form
     {
-        List<Account> listAccountCombined;
-        public AddAccount(List<Account> listAccountCombined)
+        List<Account> listAccountCombined = AccountDAO.Instance.getListUserAccount().Concat(AccountDAO.Instance.getListEmployeeAccount()).ToList();
+        public RegAccount()
         {
             InitializeComponent();
-            this.listAccountCombined= listAccountCombined;
+            
         }
 
         private void btnTaoTaiKhoan_Click(object sender, EventArgs e)
@@ -27,17 +27,15 @@ namespace StationManager.Forms
             string password = tbPassword.Text;
             string username = tbUsername.Text;
             string email = tbEmail.Text;
-            string empID = tbEmpID.Text;
             if (listAccountCombined.Any(account => account.LoginID.Equals(loginID))) { MessageBox.Show("Login ID đã tồn tại"); return; }
-            if (listAccountCombined.Any(account => account.EmpID.Equals(empID))) { MessageBox.Show("Employee ID đã tồn tại"); return; }
             if (listAccountCombined.Any(account => account.Email.Equals(email))) { MessageBox.Show("Email đã tồn tại"); return; }
-            if (AccountDAO.Instance.createAccount(loginID, password, username, email, empID))
+            if (AccountDAO.Instance.createAccount(loginID, password, username, email))
             {
-                MessageBox.Show("Tạo tài khoản thành công");
+                MessageBox.Show("Đăng ký thành công");
             }
             else
             {
-                MessageBox.Show("Tạo tài khoản thất bại");
+                MessageBox.Show("Đăng ký thất bại");
             }
         }
     }
