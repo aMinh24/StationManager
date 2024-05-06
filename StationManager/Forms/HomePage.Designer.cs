@@ -28,12 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "HomePage";
+            btnAccount = new Button();
+            btnStation = new Button();
+            btnRequest = new Button();
+            btnReport = new Button();
+            SuspendLayout();
+            // 
+            // btnAccount
+            // 
+            btnAccount.Location = new Point(12, 68);
+            btnAccount.Name = "btnAccount";
+            btnAccount.Size = new Size(142, 56);
+            btnAccount.TabIndex = 0;
+            btnAccount.Text = "Tài khoản";
+            btnAccount.UseVisualStyleBackColor = true;
+            btnAccount.Click += btnAccount_Click;
+            // 
+            // btnStation
+            // 
+            btnStation.Location = new Point(12, 130);
+            btnStation.Name = "btnStation";
+            btnStation.Size = new Size(142, 56);
+            btnStation.TabIndex = 1;
+            btnStation.Text = "Trạm sạc";
+            btnStation.UseVisualStyleBackColor = true;
+            btnStation.Click += btnStation_Click;
+            // 
+            // btnRequest
+            // 
+            btnRequest.Location = new Point(12, 192);
+            btnRequest.Name = "btnRequest";
+            btnRequest.Size = new Size(142, 56);
+            btnRequest.TabIndex = 2;
+            btnRequest.Text = "Yêu cầu";
+            btnRequest.UseVisualStyleBackColor = true;
+            btnRequest.Click += btnRequest_Click;
+            // 
+            // btnReport
+            // 
+            btnReport.Location = new Point(12, 254);
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(142, 56);
+            btnReport.TabIndex = 3;
+            btnReport.Text = "Báo cáo";
+            btnReport.UseVisualStyleBackColor = true;
+            btnReport.Click += btnReport_Click;
+            // 
+            // HomePage
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1056, 669);
+            Controls.Add(btnReport);
+            Controls.Add(btnRequest);
+            Controls.Add(btnStation);
+            Controls.Add(btnAccount);
+            Name = "HomePage";
+            Text = "HomePage";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnAccount;
+        private Button btnStation;
+        private Button btnRequest;
+        private Button btnReport;
     }
 }
