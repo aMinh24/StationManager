@@ -38,6 +38,7 @@
             Edit = new DataGridViewImageColumn();
             lb_ViewStation = new Label();
             btn_Delete = new Button();
+            btn_Add = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgv_Station).BeginInit();
             SuspendLayout();
             // 
@@ -122,7 +123,7 @@
             // 
             // btn_Delete
             // 
-            btn_Delete.Location = new Point(428, 642);
+            btn_Delete.Location = new Point(525, 642);
             btn_Delete.Name = "btn_Delete";
             btn_Delete.Size = new Size(161, 57);
             btn_Delete.TabIndex = 2;
@@ -130,11 +131,22 @@
             btn_Delete.UseVisualStyleBackColor = true;
             btn_Delete.Click += btn_Delete_Click;
             // 
+            // btn_Add
+            // 
+            btn_Add.Location = new Point(288, 642);
+            btn_Add.Name = "btn_Add";
+            btn_Add.Size = new Size(161, 57);
+            btn_Add.TabIndex = 3;
+            btn_Add.Text = "Add";
+            btn_Add.UseVisualStyleBackColor = true;
+            btn_Add.Click += btn_Add_Click;
+            // 
             // ViewStation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1006, 721);
+            Controls.Add(btn_Add);
             Controls.Add(btn_Delete);
             Controls.Add(lb_ViewStation);
             Controls.Add(dtgv_Station);
@@ -157,5 +169,6 @@
         private DataGridViewTextBoxColumn TotalActivePort;
         private DataGridViewTextBoxColumn Status;
         private DataGridViewImageColumn Edit;
+        private Button btn_Add;
     }
 }
