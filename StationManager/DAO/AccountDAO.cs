@@ -18,7 +18,7 @@ namespace StationManager.DAO
         public List<Account> getListUserAccount()
         {
             List<Account> list = new List<Account>();
-            string query = "SELECT * FROM Account WHERE Account.LoginId not in (SELECT LoginId from Employee)";
+            string query = "SELECT * FROM Account WHERE Account.LoginId not in (SELECT LoginId from Employee) AND IsDisable = 0";
             DataTable table = DataProvider.Instance.ExcuteQuery(query);
             foreach(DataRow row in table.Rows)
             {
@@ -29,7 +29,7 @@ namespace StationManager.DAO
         public List<Account> getListEmployeeAccount()
         {
             List<Account> list = new List<Account>();
-            string query = "SELECT Account.*, EmployeeId FROM Account, Employee WHERE Account.LoginId = Employee.LoginId";
+            string query = "SELECT Account.*, EmployeeId FROM Account, Employee WHERE Account.LoginId = Employee.LoginId AND IsDisable = 0";
             DataTable table = DataProvider.Instance.ExcuteQuery(query);
             foreach (DataRow row in table.Rows)
             {
@@ -42,17 +42,27 @@ namespace StationManager.DAO
             string query = "UPDATE ACCOUNT SET Password = @Password , Username = @Username , Email = @Email WHERE LoginId = @LoginID";
             return DataProvider.Instance.ExcuteNonQuery(query, new object[] {password, username, email, loginID}) > 0;
         }
-        public bool createAccount(string loginID, string password, string username, string email, string empID)
+        public bool createAccount(string loginID, string password, string username, string email, string? empID = null)
         {
-            string accountQuery = "INSERT INTO Account VALUES ( @loginID , @password , @username , @email )";
+            string accountQuery = "INSERT INTO Account VALUES ( @loginID , @password , @username , @email , 0 )";
             string employeeQuery = "INSERT INTO Employee VALUES ( @empID , @loginID )";
             bool accountExecute = DataProvider.Instance.ExcuteNonQuery(accountQuery, new object[] { loginID, password, username, email }) > 0;
-            bool employeeExecute = DataProvider.Instance.ExcuteNonQuery(employeeQuery, new object[] { empID,  loginID }) > 0;
-            if(accountExecute == true && employeeExecute == false)
+            bool employeeExecute = true;
+            if(empID != null)
             {
-                DataProvider.Instance.ExcuteNonQuery("DELETE FROM Account WHERE LoginId = @loginID", new object[] { loginID } );
+                employeeExecute = DataProvider.Instance.ExcuteNonQuery(employeeQuery, new object[] { empID, loginID }) > 0;
+                if (accountExecute == true && employeeExecute == false)
+                {
+                    DataProvider.Instance.ExcuteNonQuery("DELETE FROM Account WHERE LoginId = @loginID", new object[] { loginID });
+                }
             }
+            
             return accountExecute && employeeExecute;
+        }
+        public bool disableAccount(string loginID)
+        {
+            string query = "UPDATE ACCOUNT SET IsDisable = 1 WHERE LoginId = @loginID";
+            return DataProvider.Instance.ExcuteNonQuery(query, new object[] { loginID }) > 0;
         }
     }
 }
