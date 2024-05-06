@@ -29,6 +29,34 @@ namespace StationManager.DAO
             DataProvider.Instance.ExcuteNonQuery(query, new object[] { stationId });
         }
 
+        private static string getGreatestStationId()
+        {
+            string query = "SELECT TOP 1 StationId FROM Station ORDER BY StationId DESC";
+            DataTable dt = DataProvider.Instance.ExcuteQuery(query);
+            return dt.Rows[0]["StationId"].ToString();
+        }
+
+        public static string autoIncreaseStationId(string stationId)
+        {
+            if (stationId.StartsWith("ST"))
+            {
+                string so = stationId.Substring(2);
+                int soMoi = int.Parse(so) + 1;
+                return "ST" + soMoi.ToString("D3");
+            }
+            else
+            {
+                return stationId;
+            }
+        }
+
+        public static void addStation(string address, int totalPort, int totalActivePort, string status)
+        {
+            string stationId = autoIncreaseStationId(getGreatestStationId());
+            string query = "INSERT INTO Station VALUES ( @StationId , @Address , @TotalPort , @TotalActivePort , @Status )";
+            DataProvider.Instance.ExcuteNonQuery(query, new object[] { stationId, address, totalPort, totalActivePort, status });
+        }
+
         public static void updateStation(string stationId, string address, int totalPort, int totalActivePort, string status)
         {
             string query1 = "UPDATE Station SET Address = @Address WHERE StationId = @StationId";

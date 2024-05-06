@@ -18,6 +18,7 @@ namespace StationManager.Forms
 {
     public partial class ViewStation : Form
     {
+        AddStation addStation = new AddStation();
         EditStation editStation = new EditStation();
         private List<Station> stationList = new List<Station>();
 
@@ -26,6 +27,12 @@ namespace StationManager.Forms
             InitializeComponent();
             editStation.Visible = false;
             editStation.DataUpdated += EditStation_DataUpdated;
+            addStation.DataUpdated += AddStation_DataUpdated;
+            loadData();
+        }
+
+        private void AddStation_DataUpdated(object? sender, EventArgs e)
+        {
             loadData();
         }
 
@@ -88,6 +95,11 @@ namespace StationManager.Forms
                 dtgv_Station.DataSource = stationList;
                 MessageBox.Show("Station has been deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            addStation.Visible = true;
         }
     }
 }
