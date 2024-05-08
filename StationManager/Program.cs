@@ -13,7 +13,7 @@ namespace StationManager
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new ViewTask());
+            Application.Run(new LoginForm());
         }
     }
 }

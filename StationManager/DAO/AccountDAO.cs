@@ -64,5 +64,20 @@ namespace StationManager.DAO
             string query = "UPDATE ACCOUNT SET IsDisable = 1 WHERE LoginId = @loginID";
             return DataProvider.Instance.ExcuteNonQuery(query, new object[] { loginID }) > 0;
         }
+        public static Account CheckLogin(string loginID,string password)
+        {
+            string query = "SELECT Account.*, EmployeeId FROM Account, Employee WHERE Account.LoginId = Employee.LoginId AND IsDisable = 0 and Account.loginId = @loginId and password = @password";
+            DataTable dt = DataProvider.Instance.ExcuteQuery(query, new object[] { loginID, password });
+            if (dt.Rows.Count>0)
+            {
+                return new Account(dt.Rows[0]);
+            }
+            return null;
+        }
+        public void ChargeAccount(string loginId, int total)
+        {
+            string query = $"update account set balance = '{total}' where loginId = '{loginId}'";
+            DataProvider.Instance.ExcuteNonQuery(query);
+        }
     }
 }

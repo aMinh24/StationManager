@@ -7,14 +7,14 @@ namespace TaskManager.Service
     {
         public static List<Credential> LoadCredential()
         {
-            return CredentialManager.EnumerateCredentials().Where(x => x.ApplicationName.StartsWith("TMAccount")).ToList();
+            return CredentialManager.EnumerateCredentials().Where(x => x.ApplicationName.StartsWith("SMAccount")).ToList();
         }
         public static void SaveCredential(string username, string password, bool cb)
         {
             if (cb)
             {
                 CredentialManager.WriteCredential(
-                applicationName: "TMAccount_" + username,
+                applicationName: "SMAccount_" + username,
                 userName: username,
                 secret: password,
                 comment: "",
@@ -24,7 +24,7 @@ namespace TaskManager.Service
             {
                 try
                 {
-                    CredentialManager.DeleteCredential("TMAccount_" + username);
+                    CredentialManager.DeleteCredential("SMAccount_" + username);
                 }
                 catch { }
             }
