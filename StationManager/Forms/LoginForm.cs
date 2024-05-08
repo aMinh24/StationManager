@@ -31,6 +31,7 @@ namespace StationManager.Forms
             Account acc = CheckLogin(cbUsername.Text, txbPassword.Text);
             if (acc != null)
             {
+                SavePassword.SaveCredential(cbUsername.Text, txbPassword.Text, chbRemember.Checked);
                 HomePage home = new HomePage(acc);
                 this.Hide();
                 home.ShowDialog();

@@ -14,6 +14,9 @@
     <PackageReference Include="Meziantou.Framework.Win32.CredentialManager" Version="1.6.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="payOS" Version="1.0.4" />
+    <PackageReference Include="PayOS.Lib.Be" Version="1.0.9" />
+    <PackageReference Include="payOS.Net5" Version="1.0.2" />
     <PackageReference Include="System.Windows.Forms.DataVisualization" Version="1.0.0-prerelease.20110.1" />
     <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
   </ItemGroup>

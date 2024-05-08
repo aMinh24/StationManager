@@ -14,6 +14,7 @@ namespace StationManager.DTO
         private string username;
         private string email;
         private string empID;
+        public int balance;
 
         public string LoginID { get => loginID; set => loginID = value; }
         public string Password { get => password; set => password = value; }
@@ -27,6 +28,7 @@ namespace StationManager.DTO
             password = row["Password"].ToString();
             username = row["Username"].ToString();
             email = row["Email"].ToString();
+            balance = int.Parse(row["balance"].ToString());
             try
             {
                 EmpID = row["EmployeeId"].ToString();

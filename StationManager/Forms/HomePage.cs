@@ -1,5 +1,6 @@
 ﻿
 
+using StationManager.DAO;
 using StationManager.DTO;
 
 namespace StationManager.Forms
@@ -15,6 +16,7 @@ namespace StationManager.Forms
         {
             InitializeComponent();
             this.owner = acc;
+            lbBalance.Text = $"{owner.balance} VNĐ";
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -39,6 +41,14 @@ namespace StationManager.Forms
         {
             ViewReport viewReport = new ViewReport();
             viewReport.Show();
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            PopupPay popupPay = new PopupPay(owner);
+            popupPay.ShowDialog();
+            owner = AccountDAO.CheckLogin(owner.LoginID,owner.Password);
+            lbBalance.Text = $"{owner.balance} VNĐ";
         }
     }
 }

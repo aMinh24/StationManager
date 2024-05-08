@@ -74,5 +74,10 @@ namespace StationManager.DAO
             }
             return null;
         }
+        public void ChargeAccount(string loginId, int total)
+        {
+            string query = $"update account set balance = '{total}' where loginId = '{loginId}'";
+            DataProvider.Instance.ExcuteNonQuery(query);
+        }
     }
 }
