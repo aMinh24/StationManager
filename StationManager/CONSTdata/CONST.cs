@@ -39,6 +39,7 @@ namespace TaskManager.CONSTdata
             { 'Đ', 'D' }
                 };
         public static string DOWNLOADS = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+        public static string CHROME = Microsoft.Win32.Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe", null, null) as string;
 
         public static string RemoveSigns(string text)
         {
@@ -47,7 +48,7 @@ namespace TaskManager.CONSTdata
         "ÁÀẠẢÃÂẤẦẬẨẪĂẮẰẶẲẴ",
         "éèẹẻẽêếềệểễ",
         "ÉÈẸẺẼÊẾỀỆỂỄ",
-        "óòọỏõôốồộổỗơớờợởỡ", 
+        "óòọỏõôốồộổỗơớờợởỡ",
         "ÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠ",
         "úùụủũưứừựửữ",
         "ÚÙỤỦŨƯỨỪỰỬỮ",

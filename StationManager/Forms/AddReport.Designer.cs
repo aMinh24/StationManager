@@ -63,27 +63,16 @@
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-<<<<<<< Updated upstream
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Size = new Size(376, 433);
-=======
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.7050362F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 31.4148674F));
             tableLayoutPanel1.Size = new Size(400, 400);
->>>>>>> Stashed changes
             tableLayoutPanel1.TabIndex = 2;
             // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-<<<<<<< Updated upstream
-            button2.Location = new Point(279, 233);
-=======
             button2.Location = new Point(303, 216);
->>>>>>> Stashed changes
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 4;
@@ -101,11 +90,7 @@
             // txbContent
             // 
             txbContent.Dock = DockStyle.Top;
-<<<<<<< Updated upstream
-            txbContent.Location = new Point(148, 103);
-=======
             txbContent.Location = new Point(95, 95);
->>>>>>> Stashed changes
             txbContent.Name = "txbContent";
             txbContent.Size = new Size(302, 27);
             txbContent.TabIndex = 2;
@@ -113,11 +98,7 @@
             // txbFile
             // 
             txbFile.Dock = DockStyle.Top;
-<<<<<<< Updated upstream
-            txbFile.Location = new Point(148, 203);
-=======
             txbFile.Location = new Point(95, 187);
->>>>>>> Stashed changes
             txbFile.Name = "txbFile";
             txbFile.ReadOnly = true;
             txbFile.Size = new Size(302, 27);
@@ -135,11 +116,7 @@
             // label3
             // 
             label3.AutoSize = true;
-<<<<<<< Updated upstream
-            label3.Location = new Point(3, 100);
-=======
             label3.Location = new Point(3, 92);
->>>>>>> Stashed changes
             label3.Name = "label3";
             label3.Size = new Size(71, 20);
             label3.TabIndex = 6;
@@ -148,11 +125,7 @@
             // label4
             // 
             label4.AutoSize = true;
-<<<<<<< Updated upstream
-            label4.Location = new Point(3, 200);
-=======
             label4.Location = new Point(3, 184);
->>>>>>> Stashed changes
             label4.Name = "label4";
             label4.Size = new Size(32, 20);
             label4.TabIndex = 7;
@@ -161,11 +134,7 @@
             // txbEmployeeId
             // 
             txbEmployeeId.Dock = DockStyle.Top;
-<<<<<<< Updated upstream
-            txbEmployeeId.Location = new Point(148, 333);
-=======
             txbEmployeeId.Location = new Point(95, 285);
->>>>>>> Stashed changes
             txbEmployeeId.Name = "txbEmployeeId";
             txbEmployeeId.Size = new Size(302, 27);
             txbEmployeeId.TabIndex = 13;
@@ -173,11 +142,7 @@
             // label5
             // 
             label5.AutoSize = true;
-<<<<<<< Updated upstream
-            label5.Location = new Point(3, 330);
-=======
             label5.Location = new Point(3, 282);
->>>>>>> Stashed changes
             label5.Name = "label5";
             label5.Size = new Size(67, 40);
             label5.TabIndex = 12;
@@ -200,14 +165,9 @@
             // lbTitle
             // 
             lbTitle.AutoSize = true;
-<<<<<<< Updated upstream
-            lbTitle.Font = new Font("Segoe UI", 20F);
-            lbTitle.Location = new Point(164, 9);
-=======
             lbTitle.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTitle.ForeColor = Color.Black;
             lbTitle.Location = new Point(221, 9);
->>>>>>> Stashed changes
             lbTitle.Name = "lbTitle";
             lbTitle.Size = new Size(163, 35);
             lbTitle.TabIndex = 18;

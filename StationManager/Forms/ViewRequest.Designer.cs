@@ -46,13 +46,10 @@
             label5 = new Label();
             txbSendCode = new TextBox();
             btnConfirm = new Button();
-<<<<<<< Updated upstream
-=======
             btnShowAll = new Button();
             btnErrorTime = new Button();
             lbRequest = new Label();
             ttError = new ToolTip(components);
->>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)dtgvShow).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -64,26 +61,6 @@
             dtgvShow.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgvShow.BackgroundColor = Color.FromArgb(41, 128, 185);
             dtgvShow.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< Updated upstream
-            dtgvShow.Location = new Point(108, 156);
-            dtgvShow.Name = "dtgvShow";
-            dtgvShow.ReadOnly = true;
-            dtgvShow.RowHeadersWidth = 51;
-            dtgvShow.Size = new Size(718, 363);
-            dtgvShow.TabIndex = 3;
-            // 
-            // lbRequest
-            // 
-            lbRequest.AutoSize = true;
-            lbRequest.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbRequest.ForeColor = Color.Red;
-            lbRequest.Location = new Point(336, 9);
-            lbRequest.Name = "lbRequest";
-            lbRequest.Size = new Size(312, 38);
-            lbRequest.TabIndex = 4;
-            lbRequest.Text = "Yêu cầu hỗ trợ hôm nay";
-            // 
-=======
             dtgvShow.Location = new Point(25, 150);
             dtgvShow.Name = "dtgvShow";
             dtgvShow.ReadOnly = true;
@@ -91,7 +68,6 @@
             dtgvShow.Size = new Size(800, 450);
             dtgvShow.TabIndex = 3;
             // 
->>>>>>> Stashed changes
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
@@ -101,14 +77,6 @@
             tableLayoutPanel1.Controls.Add(btnToday, 1, 0);
             tableLayoutPanel1.Controls.Add(btnNoView, 0, 0);
             tableLayoutPanel1.Controls.Add(btnCountNoView, 0, 1);
-<<<<<<< Updated upstream
-            tableLayoutPanel1.Location = new Point(108, 74);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 56.57895F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 43.42105F));
-            tableLayoutPanel1.Size = new Size(718, 76);
-=======
             tableLayoutPanel1.Controls.Add(dtpEnd, 2, 1);
             tableLayoutPanel1.Controls.Add(dtpStart, 2, 0);
             tableLayoutPanel1.Location = new Point(25, 75);
@@ -117,21 +85,14 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 49.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50.6666679F));
             tableLayoutPanel1.Size = new Size(644, 70);
->>>>>>> Stashed changes
             tableLayoutPanel1.TabIndex = 5;
             // 
             // btnCountToday
             // 
             btnCountToday.Dock = DockStyle.Fill;
-<<<<<<< Updated upstream
-            btnCountToday.Location = new Point(360, 46);
-            btnCountToday.Name = "btnCountToday";
-            btnCountToday.Size = new Size(355, 27);
-=======
             btnCountToday.Location = new Point(200, 37);
             btnCountToday.Name = "btnCountToday";
             btnCountToday.Size = new Size(190, 30);
->>>>>>> Stashed changes
             btnCountToday.TabIndex = 3;
             btnCountToday.Text = "0";
             btnCountToday.UseVisualStyleBackColor = true;
@@ -142,15 +103,9 @@
             btnToday.BackColor = Color.IndianRed;
             btnToday.Dock = DockStyle.Fill;
             btnToday.ForeColor = SystemColors.ButtonFace;
-<<<<<<< Updated upstream
-            btnToday.Location = new Point(360, 3);
-            btnToday.Name = "btnToday";
-            btnToday.Size = new Size(355, 37);
-=======
             btnToday.Location = new Point(200, 3);
             btnToday.Name = "btnToday";
             btnToday.Size = new Size(190, 28);
->>>>>>> Stashed changes
             btnToday.TabIndex = 1;
             btnToday.Text = "Yêu cầu hôm nay";
             btnToday.UseVisualStyleBackColor = false;
@@ -163,11 +118,7 @@
             btnNoView.ForeColor = SystemColors.ButtonFace;
             btnNoView.Location = new Point(3, 3);
             btnNoView.Name = "btnNoView";
-<<<<<<< Updated upstream
-            btnNoView.Size = new Size(351, 37);
-=======
             btnNoView.Size = new Size(191, 28);
->>>>>>> Stashed changes
             btnNoView.TabIndex = 0;
             btnNoView.Text = "Yêu cầu chưa xem";
             btnNoView.UseVisualStyleBackColor = false;
@@ -176,22 +127,14 @@
             // btnCountNoView
             // 
             btnCountNoView.Dock = DockStyle.Fill;
-<<<<<<< Updated upstream
-            btnCountNoView.Location = new Point(3, 46);
-            btnCountNoView.Name = "btnCountNoView";
-            btnCountNoView.Size = new Size(351, 27);
-=======
             btnCountNoView.Location = new Point(3, 37);
             btnCountNoView.Name = "btnCountNoView";
             btnCountNoView.Size = new Size(191, 30);
->>>>>>> Stashed changes
             btnCountNoView.TabIndex = 2;
             btnCountNoView.Text = "0";
             btnCountNoView.UseVisualStyleBackColor = true;
             btnCountNoView.Click += btnCountNoView_Click;
             // 
-<<<<<<< Updated upstream
-=======
             // dtpEnd
             // 
             dtpEnd.Format = DateTimePickerFormat.Short;
@@ -199,7 +142,6 @@
             dtpEnd.Name = "dtpEnd";
             dtpEnd.Size = new Size(245, 27);
             dtpEnd.TabIndex = 5;
-            dtpEnd.ValueChanged += dtpEnd_ValueChanged;
             // 
             // dtpStart
             // 
@@ -208,9 +150,7 @@
             dtpStart.Name = "dtpStart";
             dtpStart.Size = new Size(245, 27);
             dtpStart.TabIndex = 4;
-            dtpStart.ValueChanged += dtpStart_ValueChanged;
             // 
->>>>>>> Stashed changes
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 2;
@@ -226,11 +166,7 @@
             tableLayoutPanel2.Controls.Add(label4, 0, 3);
             tableLayoutPanel2.Controls.Add(label5, 0, 4);
             tableLayoutPanel2.Controls.Add(txbSendCode, 1, 0);
-<<<<<<< Updated upstream
-            tableLayoutPanel2.Location = new Point(867, 156);
-=======
             tableLayoutPanel2.Location = new Point(850, 150);
->>>>>>> Stashed changes
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 5;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 47.1428566F));
@@ -344,17 +280,10 @@
             // 
             // btnConfirm
             // 
-<<<<<<< Updated upstream
-            btnConfirm.BackColor = Color.IndianRed;
-            btnConfirm.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnConfirm.ForeColor = SystemColors.ButtonHighlight;
-            btnConfirm.Location = new Point(1124, 538);
-=======
             btnConfirm.BackColor = Color.White;
             btnConfirm.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConfirm.ForeColor = Color.Black;
             btnConfirm.Location = new Point(975, 550);
->>>>>>> Stashed changes
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(150, 50);
             btnConfirm.TabIndex = 7;
@@ -362,8 +291,6 @@
             btnConfirm.UseVisualStyleBackColor = false;
             btnConfirm.Click += btnConfirm_Click;
             // 
-<<<<<<< Updated upstream
-=======
             // btnShowAll
             // 
             btnShowAll.Location = new Point(675, 75);
@@ -372,11 +299,9 @@
             btnShowAll.TabIndex = 8;
             btnShowAll.Text = "Xem tất cả";
             btnShowAll.UseVisualStyleBackColor = true;
-            btnShowAll.Click += btnShowAll_Click;
             // 
             // btnErrorTime
             // 
-            btnErrorTime.Image = (Image)resources.GetObject("btnErrorTime.Image");
             btnErrorTime.Location = new Point(792, 75);
             btnErrorTime.Name = "btnErrorTime";
             btnErrorTime.Size = new Size(33, 29);
@@ -395,20 +320,15 @@
             lbRequest.TabIndex = 16;
             lbRequest.Text = "Yêu cầu hỗ trợ hôm nay";
             // 
->>>>>>> Stashed changes
             // ViewRequest
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< Updated upstream
-            ClientSize = new Size(1366, 591);
-=======
             BackColor = Color.FromArgb(52, 152, 219);
             ClientSize = new Size(1285, 633);
             Controls.Add(lbRequest);
             Controls.Add(btnErrorTime);
             Controls.Add(btnShowAll);
->>>>>>> Stashed changes
             Controls.Add(btnConfirm);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
@@ -443,14 +363,11 @@
         private Label label5;
         private TextBox txbSendCode;
         private Button btnConfirm;
-<<<<<<< Updated upstream
-=======
         private DateTimePicker dtpEnd;
         private DateTimePicker dtpStart;
         private Button btnShowAll;
         private Button btnErrorTime;
         private Label lbRequest;
         private ToolTip ttError;
->>>>>>> Stashed changes
     }
 }

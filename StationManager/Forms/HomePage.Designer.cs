@@ -28,15 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< Updated upstream
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "HomePage";
-        }
 
-        #endregion
-=======
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             btnAccount = new Button();
             btnStation = new Button();
@@ -120,7 +116,6 @@
             btnTask.TabIndex = 7;
             btnTask.Text = "Công việc";
             btnTask.UseVisualStyleBackColor = true;
-            btnTask.Click += btnTask_Click;
             // 
             // panel1
             // 
@@ -138,7 +133,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 673);
             panel1.TabIndex = 9;
-            panel1.Paint += panel1_Paint;
             // 
             // lbBalance
             // 
@@ -188,6 +182,5 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private TextBox lbBalance;
->>>>>>> Stashed changes
     }
 }

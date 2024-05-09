@@ -1,4 +1,7 @@
-﻿namespace StationManager.Forms
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Forms;
+
+namespace StationManager.Forms
 {
     partial class ViewAccount
     {
@@ -67,7 +70,6 @@
             dtgvAccount.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(109, 122, 224);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.Padding = new Padding(10);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(109, 122, 224);
@@ -78,7 +80,7 @@
             dtgvAccount.Columns.AddRange(new DataGridViewColumn[] { loginID, Password, Username, Email, EmpID });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle3.Padding = new Padding(10, 0, 0, 0);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 227, 246);
@@ -87,7 +89,7 @@
             dtgvAccount.DefaultCellStyle = dataGridViewCellStyle3;
             dtgvAccount.EnableHeadersVisualStyles = false;
             dtgvAccount.GridColor = SystemColors.ControlDark;
-            dtgvAccount.Location = new Point(25, 25);
+            dtgvAccount.Location = new Point(14, 16);
             dtgvAccount.Margin = new Padding(3, 4, 3, 4);
             dtgvAccount.MultiSelect = false;
             dtgvAccount.Name = "dtgvAccount";
@@ -95,7 +97,7 @@
             dtgvAccount.RowHeadersVisible = false;
             dtgvAccount.RowHeadersWidth = 51;
             dtgvAccount.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvAccount.Size = new Size(850, 525);
+            dtgvAccount.Size = new Size(861, 539);
             dtgvAccount.TabIndex = 0;
             // 
             // loginID
@@ -151,10 +153,9 @@
             // lbPhanLoai
             // 
             lbPhanLoai.AutoSize = true;
-            lbPhanLoai.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbPhanLoai.Location = new Point(900, 25);
+            lbPhanLoai.Location = new Point(894, 44);
             lbPhanLoai.Name = "lbPhanLoai";
-            lbPhanLoai.Size = new Size(100, 28);
+            lbPhanLoai.Size = new Size(70, 20);
             lbPhanLoai.TabIndex = 1;
             lbPhanLoai.Text = "Phân loại";
             // 
@@ -163,23 +164,21 @@
             cbPhanLoai.BackColor = Color.White;
             cbPhanLoai.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPhanLoai.FlatStyle = FlatStyle.Flat;
-            cbPhanLoai.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbPhanLoai.FormattingEnabled = true;
             cbPhanLoai.Items.AddRange(new object[] { "Khách hàng", "Nhân viên" });
-            cbPhanLoai.Location = new Point(999, 25);
+            cbPhanLoai.Location = new Point(965, 40);
             cbPhanLoai.Margin = new Padding(3, 4, 3, 4);
             cbPhanLoai.Name = "cbPhanLoai";
-            cbPhanLoai.Size = new Size(245, 28);
+            cbPhanLoai.Size = new Size(297, 28);
             cbPhanLoai.TabIndex = 2;
             cbPhanLoai.SelectedIndexChanged += cbPhanLoai_SelectedIndexChanged;
             // 
             // lbLoginID
             // 
             lbLoginID.AutoSize = true;
-            lbLoginID.Font = new Font("Segoe UI", 12F);
-            lbLoginID.Location = new Point(901, 78);
+            lbLoginID.Location = new Point(894, 100);
             lbLoginID.Name = "lbLoginID";
-            lbLoginID.Size = new Size(85, 28);
+            lbLoginID.Size = new Size(65, 20);
             lbLoginID.TabIndex = 3;
             lbLoginID.Text = "Login ID";
             // 
@@ -187,81 +186,73 @@
             // 
             tbLoginID.BackColor = Color.White;
             tbLoginID.BorderStyle = BorderStyle.FixedSingle;
-            tbLoginID.Font = new Font("Segoe UI", 12F);
-            tbLoginID.Location = new Point(900, 110);
+            tbLoginID.Location = new Point(894, 124);
             tbLoginID.Margin = new Padding(3, 4, 3, 4);
             tbLoginID.Name = "tbLoginID";
             tbLoginID.ReadOnly = true;
-            tbLoginID.Size = new Size(150, 34);
+            tbLoginID.Size = new Size(167, 27);
             tbLoginID.TabIndex = 4;
             // 
             // lbPassword
             // 
             lbPassword.AutoSize = true;
-            lbPassword.Font = new Font("Segoe UI", 12F);
-            lbPassword.Location = new Point(1100, 78);
+            lbPassword.Location = new Point(1095, 100);
             lbPassword.Name = "lbPassword";
-            lbPassword.Size = new Size(93, 28);
+            lbPassword.Size = new Size(70, 20);
             lbPassword.TabIndex = 3;
             lbPassword.Text = "Password";
             // 
             // tbPassword
             // 
             tbPassword.BorderStyle = BorderStyle.FixedSingle;
-            tbPassword.Font = new Font("Segoe UI", 12F);
-            tbPassword.Location = new Point(1100, 110);
+            tbPassword.Location = new Point(1095, 124);
             tbPassword.Margin = new Padding(3, 4, 3, 4);
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(150, 34);
+            tbPassword.Size = new Size(167, 27);
             tbPassword.TabIndex = 4;
             // 
             // lbUsername
             // 
             lbUsername.AutoSize = true;
-            lbUsername.Font = new Font("Segoe UI", 12F);
-            lbUsername.Location = new Point(901, 163);
+            lbUsername.Location = new Point(894, 179);
             lbUsername.Name = "lbUsername";
-            lbUsername.Size = new Size(99, 28);
+            lbUsername.Size = new Size(75, 20);
             lbUsername.TabIndex = 3;
             lbUsername.Text = "Username";
             // 
             // tbUsername
             // 
             tbUsername.BorderStyle = BorderStyle.FixedSingle;
-            tbUsername.Font = new Font("Segoe UI", 12F);
-            tbUsername.Location = new Point(900, 195);
+            tbUsername.Location = new Point(894, 203);
             tbUsername.Margin = new Padding(3, 4, 3, 4);
             tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(350, 34);
+            tbUsername.Size = new Size(370, 27);
             tbUsername.TabIndex = 4;
             // 
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Font = new Font("Segoe UI", 12F);
-            lbEmail.Location = new Point(900, 248);
+            lbEmail.Location = new Point(894, 255);
             lbEmail.Name = "lbEmail";
-            lbEmail.Size = new Size(59, 28);
+            lbEmail.Size = new Size(46, 20);
             lbEmail.TabIndex = 3;
             lbEmail.Text = "Email";
             // 
             // tbEmail
             // 
             tbEmail.BorderStyle = BorderStyle.FixedSingle;
-            tbEmail.Font = new Font("Segoe UI", 12F);
-            tbEmail.Location = new Point(900, 280);
+            tbEmail.Location = new Point(894, 279);
             tbEmail.Margin = new Padding(3, 4, 3, 4);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(350, 34);
+            tbEmail.Size = new Size(368, 27);
             tbEmail.TabIndex = 4;
             // 
             // lbEmpID
             // 
             lbEmpID.AutoSize = true;
-            lbEmpID.Font = new Font("Segoe UI", 12F);
-            lbEmpID.Location = new Point(900, 338);
+            lbEmpID.Location = new Point(894, 332);
             lbEmpID.Name = "lbEmpID";
-            lbEmpID.Size = new Size(122, 28);
+            lbEmpID.Size = new Size(94, 20);
             lbEmpID.TabIndex = 3;
             lbEmpID.Text = "Employee ID";
             // 
@@ -269,21 +260,20 @@
             // 
             tbEmpID.BackColor = Color.White;
             tbEmpID.BorderStyle = BorderStyle.FixedSingle;
-            tbEmpID.Font = new Font("Segoe UI", 12F);
-            tbEmpID.Location = new Point(900, 370);
+            tbEmpID.Location = new Point(894, 356);
             tbEmpID.Margin = new Padding(3, 4, 3, 4);
             tbEmpID.Name = "tbEmpID";
             tbEmpID.ReadOnly = true;
-            tbEmpID.Size = new Size(350, 34);
+            tbEmpID.Size = new Size(368, 27);
             tbEmpID.TabIndex = 4;
             // 
             // btnEdit
             // 
             btnEdit.BackColor = Color.FromArgb(71, 142, 204);
             btnEdit.FlatAppearance.BorderColor = Color.FromArgb(63, 126, 182);
-            btnEdit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.FlatStyle = FlatStyle.System;
             btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(1095, 505);
+            btnEdit.Location = new Point(1112, 423);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(150, 50);
             btnEdit.TabIndex = 6;
@@ -293,10 +283,10 @@
             // 
             // btnAdd
             // 
-            btnAdd.BackColor = Color.White;
-            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdd.ForeColor = Color.Black;
-            btnAdd.Location = new Point(970, 431);
+            btnAdd.BackColor = Color.FromArgb(97, 126, 140);
+            btnAdd.FlatStyle = FlatStyle.System;
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(980, 505);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(200, 50);
             btnAdd.TabIndex = 5;
@@ -308,9 +298,9 @@
             // 
             btnDelete.BackColor = Color.FromArgb(240, 68, 56);
             btnDelete.FlatAppearance.BorderColor = Color.FromArgb(63, 126, 182);
-            btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.FlatStyle = FlatStyle.System;
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(894, 505);
+            btnDelete.Location = new Point(894, 423);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(150, 50);
             btnDelete.TabIndex = 6;
@@ -323,7 +313,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(52, 152, 219);
-            ClientSize = new Size(1278, 573);
+            ClientSize = new Size(1278, 581);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
