@@ -247,6 +247,11 @@ namespace StationManager.Forms
 
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
         //private void BindingControlTime(TextBox textBox, string dataMember)
         //{
         //    Binding binding = new Binding("Text", dtgvShow.DataSource, dataMember);

@@ -45,6 +45,7 @@
             btnAdd = new Button();
             btnEdit = new Button();
             button1 = new Button();
+            lbReport = new Label();
             ((System.ComponentModel.ISupportInitialize)dtgvReport).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -54,19 +55,20 @@
             dtgvReport.AllowUserToAddRows = false;
             dtgvReport.AllowUserToDeleteRows = false;
             dtgvReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtgvReport.BackgroundColor = Color.FromArgb(41, 128, 185);
             dtgvReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvReport.Location = new Point(38, 74);
+            dtgvReport.Location = new Point(25, 75);
             dtgvReport.Name = "dtgvReport";
             dtgvReport.ReadOnly = true;
             dtgvReport.RowHeadersWidth = 51;
-            dtgvReport.Size = new Size(981, 430);
+            dtgvReport.Size = new Size(800, 525);
             dtgvReport.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.9680862F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 63.0319138F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.8138962F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75.1861038F));
             tableLayoutPanel1.Controls.Add(txbId, 1, 0);
             tableLayoutPanel1.Controls.Add(txbTitle, 1, 1);
             tableLayoutPanel1.Controls.Add(txbContent, 1, 2);
@@ -79,7 +81,7 @@
             tableLayoutPanel1.Controls.Add(label6, 0, 5);
             tableLayoutPanel1.Controls.Add(txbEmployeeId, 1, 4);
             tableLayoutPanel1.Controls.Add(txbSent, 1, 5);
-            tableLayoutPanel1.Location = new Point(1084, 71);
+            tableLayoutPanel1.Location = new Point(850, 75);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -88,43 +90,43 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
-            tableLayoutPanel1.Size = new Size(376, 433);
+            tableLayoutPanel1.Size = new Size(406, 433);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // txbId
             // 
             txbId.Dock = DockStyle.Top;
-            txbId.Location = new Point(142, 3);
+            txbId.Location = new Point(103, 3);
             txbId.Name = "txbId";
             txbId.ReadOnly = true;
-            txbId.Size = new Size(231, 27);
+            txbId.Size = new Size(300, 27);
             txbId.TabIndex = 0;
             // 
             // txbTitle
             // 
             txbTitle.Dock = DockStyle.Top;
-            txbTitle.Location = new Point(142, 78);
+            txbTitle.Location = new Point(103, 78);
             txbTitle.Name = "txbTitle";
             txbTitle.ReadOnly = true;
-            txbTitle.Size = new Size(231, 27);
+            txbTitle.Size = new Size(300, 27);
             txbTitle.TabIndex = 1;
             // 
             // txbContent
             // 
             txbContent.Dock = DockStyle.Top;
-            txbContent.Location = new Point(142, 153);
+            txbContent.Location = new Point(103, 153);
             txbContent.Name = "txbContent";
             txbContent.ReadOnly = true;
-            txbContent.Size = new Size(231, 27);
+            txbContent.Size = new Size(300, 27);
             txbContent.TabIndex = 2;
             // 
             // txbFile
             // 
             txbFile.Dock = DockStyle.Top;
-            txbFile.Location = new Point(142, 228);
+            txbFile.Location = new Point(103, 228);
             txbFile.Name = "txbFile";
             txbFile.ReadOnly = true;
-            txbFile.Size = new Size(231, 27);
+            txbFile.Size = new Size(300, 27);
             txbFile.TabIndex = 3;
             // 
             // label1
@@ -184,26 +186,26 @@
             // txbEmployeeId
             // 
             txbEmployeeId.Dock = DockStyle.Top;
-            txbEmployeeId.Location = new Point(142, 303);
+            txbEmployeeId.Location = new Point(103, 303);
             txbEmployeeId.Name = "txbEmployeeId";
             txbEmployeeId.ReadOnly = true;
-            txbEmployeeId.Size = new Size(231, 27);
+            txbEmployeeId.Size = new Size(300, 27);
             txbEmployeeId.TabIndex = 11;
             // 
             // txbSent
             // 
             txbSent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txbSent.Location = new Point(142, 378);
+            txbSent.Location = new Point(103, 378);
             txbSent.Name = "txbSent";
             txbSent.ReadOnly = true;
-            txbSent.Size = new Size(231, 27);
+            txbSent.Size = new Size(300, 27);
             txbSent.TabIndex = 12;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(1087, 542);
+            btnAdd.Location = new Point(850, 550);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(94, 29);
+            btnAdd.Size = new Size(125, 50);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Thêm";
             btnAdd.UseVisualStyleBackColor = true;
@@ -211,9 +213,9 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(1341, 542);
+            btnEdit.Location = new Point(1131, 550);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(94, 29);
+            btnEdit.Size = new Size(125, 50);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "Sửa";
             btnEdit.UseVisualStyleBackColor = true;
@@ -221,19 +223,32 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1213, 542);
+            button1.Location = new Point(990, 550);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(125, 50);
             button1.TabIndex = 4;
             button1.Text = "Xóa";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // lbReport
+            // 
+            lbReport.AutoSize = true;
+            lbReport.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbReport.ForeColor = Color.Black;
+            lbReport.Location = new Point(309, 21);
+            lbReport.Name = "lbReport";
+            lbReport.Size = new Size(241, 35);
+            lbReport.TabIndex = 17;
+            lbReport.Text = "Danh sách báo cáo";
+            // 
             // ViewReport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1480, 793);
+            BackColor = Color.FromArgb(52, 152, 219);
+            ClientSize = new Size(1282, 623);
+            Controls.Add(lbReport);
             Controls.Add(button1);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
@@ -245,6 +260,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -266,5 +282,6 @@
         private Button btnEdit;
         private Button button1;
         private TextBox txbSent;
+        private Label lbReport;
     }
 }
