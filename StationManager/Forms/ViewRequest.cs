@@ -33,6 +33,11 @@ namespace StationManager.Forms
             });
             //LoadInforBinding();
         }
+        private void LoadHideError()
+        {
+            btnErrorTime.Visible = false;
+
+        }
         private void LoadCountNoView()
         {
             if (btnCountNoView.InvokeRequired)
@@ -153,6 +158,31 @@ namespace StationManager.Forms
             }
             return dataTable;
         }
+        private DataTable RequestAll(DateTime timeStart, DateTime timeEnd)
+        {
+            DataTable table = RequestDAO.Instance.GetDataRequest(timeStart, timeEnd);
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add(new DataColumn("Mã yêu cầu"));
+            dataTable.Columns.Add(new DataColumn("Tiêu đề"));
+            dataTable.Columns.Add(new DataColumn("Nội dung"));
+            dataTable.Columns.Add(new DataColumn("Thời gian gửi yêu cầu"));
+            dataTable.Columns.Add(new DataColumn("Trạng thái"));
+            if (table != null && table.Rows.Count > 0)
+            {
+
+
+                foreach (DataRow row in table.AsEnumerable())
+                {
+                    var reportCode = row.Field<string>(0);
+                    var staffCode = row.Field<string>(1);
+                    var reportName = row.Field<string>(2);
+                    var reportTime = row.Field<DateTime>(3);
+                    var status = row.Field<string>(4);
+                    dataTable.Rows.Add(reportCode, staffCode, reportName, reportTime, status);
+                }
+            }
+            return dataTable;
+        }
         private int CountNoView()
         {
             int count = 0;
@@ -176,6 +206,7 @@ namespace StationManager.Forms
 
         private void btnCountNoView_Click(object sender, EventArgs e)
         {
+            LoadHideError();
             dtgvShow.DataSource = RequestNoView();
             lbRequest.Text = "Yêu cầu hỗ trợ chưa xem";
             LoadInforBinding();
@@ -184,6 +215,7 @@ namespace StationManager.Forms
 
         private void btnNoView_Click(object sender, EventArgs e)
         {
+            LoadHideError();
             dtgvShow.DataSource = RequestNoView();
             lbRequest.Text = "Yêu cầu hỗ trợ chưa xem";
             LoadInforBinding();
@@ -192,6 +224,7 @@ namespace StationManager.Forms
 
         private void btnCountToday_Click(object sender, EventArgs e)
         {
+            LoadHideError();
             dtgvShow.DataSource = RequestToday();
             lbRequest.Text = "Yêu cầu hỗ trợ hôm nay";
             LoadInforBinding();
@@ -200,9 +233,11 @@ namespace StationManager.Forms
 
         private void btnToday_Click(object sender, EventArgs e)
         {
+            LoadHideError();
             dtgvShow.DataSource = RequestToday();
             lbRequest.Text = "Yêu cầu hỗ trợ hôm nay";
             LoadInforBinding();
+
 
 
         }
@@ -242,14 +277,40 @@ namespace StationManager.Forms
                     MessageBox.Show("Cập nhật thành công");
                     LoadDataNoView();
                     LoadCountNoView();
-                    btnNoView_Click(new object{ },new  EventArgs { });
+                    btnNoView_Click(new object { }, new EventArgs { });
                 }
 
             }
+            LoadHideError();
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnShowAll_Click(object sender, EventArgs e)
         {
+            DateTime dateStart = dtpStart.Value.Date;
+            DateTime dateEnd = dtpEnd.Value.Date.AddDays(1).AddTicks(-1);
+            if (dateStart.Date > dateEnd.Date)
+            {
+                ttError.SetToolTip(btnErrorTime, "Thời gian bắt đầu không được lớn hơn thời gian kết thúc");
+                btnErrorTime.Visible = true;
+                return;
+            }
+            LoadHideError();
+            lbRequest.Text = "Tất cả yêu cầu hỗ trợ";
+            dtgvShow.DataSource = RequestAll(dateStart, dateEnd);
+            LoadInforBinding();
+
+        }
+
+        private void dtpStart_ValueChanged(object sender, EventArgs e)
+        {
+            LoadHideError();
+
+        }
+
+        private void dtpEnd_ValueChanged(object sender, EventArgs e)
+        {
+            LoadHideError();
 
         }
         //private void BindingControlTime(TextBox textBox, string dataMember)

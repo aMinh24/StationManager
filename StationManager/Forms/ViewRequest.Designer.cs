@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dtgvShow = new DataGridView();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnCountToday = new Button();
@@ -77,8 +78,6 @@
             tableLayoutPanel1.Controls.Add(btnToday, 1, 0);
             tableLayoutPanel1.Controls.Add(btnNoView, 0, 0);
             tableLayoutPanel1.Controls.Add(btnCountNoView, 0, 1);
-            tableLayoutPanel1.Controls.Add(dtpEnd, 2, 1);
-            tableLayoutPanel1.Controls.Add(dtpStart, 2, 0);
             tableLayoutPanel1.Location = new Point(25, 75);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -90,9 +89,9 @@
             // btnCountToday
             // 
             btnCountToday.Dock = DockStyle.Fill;
-            btnCountToday.Location = new Point(200, 37);
+            btnCountToday.Location = new Point(323, 37);
             btnCountToday.Name = "btnCountToday";
-            btnCountToday.Size = new Size(190, 30);
+            btnCountToday.Size = new Size(318, 30);
             btnCountToday.TabIndex = 3;
             btnCountToday.Text = "0";
             btnCountToday.UseVisualStyleBackColor = true;
@@ -103,9 +102,9 @@
             btnToday.BackColor = Color.IndianRed;
             btnToday.Dock = DockStyle.Fill;
             btnToday.ForeColor = SystemColors.ButtonFace;
-            btnToday.Location = new Point(200, 3);
+            btnToday.Location = new Point(323, 3);
             btnToday.Name = "btnToday";
-            btnToday.Size = new Size(190, 28);
+            btnToday.Size = new Size(318, 28);
             btnToday.TabIndex = 1;
             btnToday.Text = "Yêu cầu hôm nay";
             btnToday.UseVisualStyleBackColor = false;
@@ -118,7 +117,7 @@
             btnNoView.ForeColor = SystemColors.ButtonFace;
             btnNoView.Location = new Point(3, 3);
             btnNoView.Name = "btnNoView";
-            btnNoView.Size = new Size(191, 28);
+            btnNoView.Size = new Size(314, 28);
             btnNoView.TabIndex = 0;
             btnNoView.Text = "Yêu cầu chưa xem";
             btnNoView.UseVisualStyleBackColor = false;
@@ -129,27 +128,11 @@
             btnCountNoView.Dock = DockStyle.Fill;
             btnCountNoView.Location = new Point(3, 37);
             btnCountNoView.Name = "btnCountNoView";
-            btnCountNoView.Size = new Size(191, 30);
+            btnCountNoView.Size = new Size(314, 30);
             btnCountNoView.TabIndex = 2;
             btnCountNoView.Text = "0";
             btnCountNoView.UseVisualStyleBackColor = true;
             btnCountNoView.Click += btnCountNoView_Click;
-            // 
-            // dtpEnd
-            // 
-            dtpEnd.Format = DateTimePickerFormat.Short;
-            dtpEnd.Location = new Point(396, 37);
-            dtpEnd.Name = "dtpEnd";
-            dtpEnd.Size = new Size(245, 27);
-            dtpEnd.TabIndex = 5;
-            // 
-            // dtpStart
-            // 
-            dtpStart.Format = DateTimePickerFormat.Short;
-            dtpStart.Location = new Point(396, 3);
-            dtpStart.Name = "dtpStart";
-            dtpStart.Size = new Size(245, 27);
-            dtpStart.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
@@ -223,7 +206,6 @@
             label1.TabIndex = 0;
             label1.Text = "Mã yêu cầu";
             label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
             // 
             // label2
             // 

@@ -35,6 +35,10 @@ namespace StationManager.Forms
         }
         private async void btnConfirm_Click(object sender, EventArgs e)
         {
+            if (txbAmount.Text == null) { 
+                MessageBox.Show("Không được nạp 0đ"); 
+                return;
+            }
             int amount = int.Parse(txbAmount.Text);
             if (amount < 5000) { MessageBox.Show("Không được nạp dưới 5000đ"); }
             curBill = await BillDAO.CreateBill(amount, owner.LoginID);
