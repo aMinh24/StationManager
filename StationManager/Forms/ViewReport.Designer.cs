@@ -54,7 +54,7 @@
             // 
             dtgvReport.AllowUserToAddRows = false;
             dtgvReport.AllowUserToDeleteRows = false;
-            dtgvReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtgvReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvReport.BackgroundColor = Color.FromArgb(41, 128, 185);
             dtgvReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvReport.Location = new Point(25, 75);

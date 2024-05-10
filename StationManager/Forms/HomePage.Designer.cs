@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "HomePage";
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             btnAccount = new Button();
             btnStation = new Button();
@@ -116,6 +111,7 @@
             btnTask.TabIndex = 7;
             btnTask.Text = "Công việc";
             btnTask.UseVisualStyleBackColor = true;
+            btnTask.Click += btnTask_Click;
             // 
             // panel1
             // 

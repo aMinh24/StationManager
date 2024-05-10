@@ -64,7 +64,7 @@
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(150, 50);
             btnConfirm.TabIndex = 2;
-            btnConfirm.Text = "xác nhận";
+            btnConfirm.Text = "Xác nhận";
             btnConfirm.UseVisualStyleBackColor = true;
             btnConfirm.Click += btnConfirm_Click;
             // 
