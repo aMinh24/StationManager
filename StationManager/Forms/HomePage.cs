@@ -1,4 +1,13 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 using StationManager.DAO;
 using StationManager.DTO;
@@ -12,17 +21,20 @@ namespace StationManager.Forms
         {
             InitializeComponent();
         }
-        public HomePage(Account acc)
-        {
-            InitializeComponent();
-            this.owner = acc;
-            lbBalance.Text = $"{owner.balance} VNĐ";
-        }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
             ViewAccount viewAccount = new ViewAccount();
             viewAccount.Show();
+        }
+        public HomePage(Account acc)
+        {
+            InitializeComponent();
+            this.owner = acc;
+            lbBalance.Text = $"{owner.balance} VNĐ";
+            panel1.BackColor = Color.FromArgb(128, 192, 192, 192);
+            label1 .BackColor = Color.Transparent;
+            pictureBox1.BackColor = Color.Transparent;
         }
 
         private void btnStation_Click(object sender, EventArgs e)
@@ -47,8 +59,14 @@ namespace StationManager.Forms
         {
             PopupPay popupPay = new PopupPay(owner);
             popupPay.ShowDialog();
-            owner = AccountDAO.CheckLogin(owner.LoginID,owner.Password);
+            owner = AccountDAO.CheckLogin(owner.LoginID, owner.Password);
             lbBalance.Text = $"{owner.balance} VNĐ";
+        }
+
+        private void btnTask_Click(object sender, EventArgs e)
+        {
+            ViewTask viewTask = new ViewTask();
+            viewTask.Show();
         }
     }
 }

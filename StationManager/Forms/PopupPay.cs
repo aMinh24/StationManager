@@ -22,7 +22,12 @@ namespace StationManager.Forms
         public PopupPay()
         {
             InitializeComponent();
+            panel1.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 20, 20));
         }
+
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+
         public PopupPay(Account owner)
         {
             InitializeComponent();
@@ -30,8 +35,13 @@ namespace StationManager.Forms
         }
         private async void btnConfirm_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txbAmount.Text))
+            {
+                MessageBox.Show("Không được nạp 0đ");
+                return;
+            }
             int amount = int.Parse(txbAmount.Text);
-            if (amount < 5000) { MessageBox.Show("Không được nạp dưới 5000đ"); }
+            if (amount < 5000) { MessageBox.Show("Không được nạp dưới 5000đ"); return; }
             curBill = await BillDAO.CreateBill(amount, owner.LoginID);
             Process.Start(new ProcessStartInfo
             {
@@ -44,7 +54,7 @@ namespace StationManager.Forms
         {
             if (curBill == null) { MessageBox.Show("Đang không có giao dịch nào!"); return; }
             string status = await PayService.GetStatusPayment(curBill.id);
-            if(status == "PAID")
+            if (status == "PAID")
             {
                 AccountDAO.Instance.ChargeAccount(owner.LoginID, owner.balance + curBill.total);
                 MessageBox.Show("Nạp thành công");
@@ -62,7 +72,7 @@ namespace StationManager.Forms
 
         private async void btnCancel_Click(object sender, EventArgs e)
         {
-            if(curBill == null) return;
+            if (curBill == null) return;
             string status = await PayService.GetStatusPayment(curBill.id);
             if (status == "PAID") return;
             PayService.CancelPayment(curBill.id);

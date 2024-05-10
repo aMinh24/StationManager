@@ -19,7 +19,12 @@ namespace StationManager.Forms
         {
             InitializeComponent();
             lbTitle.Text = "Thêm Báo Cáo";
+            tableLayoutPanel1.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, tableLayoutPanel1.Width, tableLayoutPanel1.Height, 20, 20));
         }
+
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+
         public AddReport(string id, string title, string content, string file, string employeeId)
         {
             InitializeComponent();

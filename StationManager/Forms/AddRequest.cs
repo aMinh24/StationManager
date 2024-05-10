@@ -16,7 +16,7 @@ namespace StationManager.Forms
     {
         private string userId;
         private DataTable rootSource;
-        
+
         public AddRequest(string userId)
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace StationManager.Forms
         }
         private void LoadData(DateTime timeStart, DateTime timeEnd)
         {
-            DataTable table = RequestDAO.Instance.GetDataRequest(timeStart,timeEnd);
+            DataTable table = RequestDAO.Instance.GetDataRequest(timeStart, timeEnd);
             rootSource = table;
         }
         private void LoadHideError()
@@ -59,10 +59,10 @@ namespace StationManager.Forms
             {
                 return;
             }
-            RequestDAO.Instance.SendRequest(txbTitle.Text,txbContent.Text,date,userId);
+            RequestDAO.Instance.SendRequest(txbTitle.Text, txbContent.Text, date, userId);
             MessageBox.Show("Gửi thành công");
-            btnShow_Click(new object(), new EventArgs() );
-           
+            btnShow_Click(new object(), new EventArgs());
+
         }
 
         private void txbTitle_TextChanged(object sender, EventArgs e)
@@ -77,8 +77,8 @@ namespace StationManager.Forms
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            DateTime dateStart = dtpTimeStart.Value.Date; 
-            DateTime dateEnd = dtpTimeEnd.Value.Date.AddDays(1).AddTicks(-1); 
+            DateTime dateStart = dtpTimeStart.Value.Date;
+            DateTime dateEnd = dtpTimeEnd.Value.Date.AddDays(1).AddTicks(-1);
             if (dateStart.Date > dateEnd.Date)
             {
                 MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc");
@@ -87,7 +87,7 @@ namespace StationManager.Forms
 
 
 
-            LoadData(dateStart,dateEnd);
+            LoadData(dateStart, dateEnd);
             dtgvRequest.DataSource = table();
         }
         private DataTable table()
@@ -103,7 +103,7 @@ namespace StationManager.Forms
                 DataTable resultTable = rootSource.Clone();
                 resultTable.Rows.Clear();
 
-                foreach (DataRow row in rootSource.AsEnumerable().Where(r => r.Field<string>("LoginId")==userId))
+                foreach (DataRow row in rootSource.AsEnumerable().Where(r => r.Field<string>("LoginId") == userId))
                 {
                     var reportCode = row.Field<string>(0);
                     var staffCode = row.Field<string>(1);
@@ -114,6 +114,11 @@ namespace StationManager.Forms
                 }
             }
             return dataTable;
+        }
+
+        private void btnErrorTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

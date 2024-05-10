@@ -33,7 +33,7 @@ namespace StationManager.DTO
             {
                 EmpID = row["EmployeeId"].ToString();
             }catch(Exception) { EmpID = null; }
-            
+
         }
     }
 }

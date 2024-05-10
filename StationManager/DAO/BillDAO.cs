@@ -26,7 +26,7 @@ namespace StationManager.DAO
                 string query = $"insert bill(total,content,status,loginid) values ('{total}','{DateTime.Now}','{bill.status}','{loginId}')";
                 DataProvider.Instance.ExcuteNonQuery(query);
             });
-            
+
             return bill;
         }
     }

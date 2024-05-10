@@ -33,40 +33,46 @@
             btnConfirm = new Button();
             btnCheckStatus = new Button();
             btnCancel = new Button();
+            lbTaoTaiKhoan = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // txbAmount
             // 
-            txbAmount.Location = new Point(316, 129);
+            txbAmount.BorderStyle = BorderStyle.FixedSingle;
+            txbAmount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbAmount.Location = new Point(50, 50);
             txbAmount.Name = "txbAmount";
-            txbAmount.Size = new Size(248, 27);
+            txbAmount.Size = new Size(300, 34);
             txbAmount.TabIndex = 0;
             txbAmount.KeyPress += txbAmount_KeyPress;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(214, 136);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(50, 19);
             label1.Name = "label1";
-            label1.Size = new Size(96, 20);
+            label1.Size = new Size(127, 28);
             label1.TabIndex = 1;
             label1.Text = "Nhập số tiền:";
             // 
             // btnConfirm
             // 
-            btnConfirm.Location = new Point(316, 242);
+            btnConfirm.Location = new Point(125, 125);
             btnConfirm.Name = "btnConfirm";
-            btnConfirm.Size = new Size(124, 37);
+            btnConfirm.Size = new Size(150, 50);
             btnConfirm.TabIndex = 2;
-            btnConfirm.Text = "xác nhận";
+            btnConfirm.Text = "Xác nhận";
             btnConfirm.UseVisualStyleBackColor = true;
             btnConfirm.Click += btnConfirm_Click;
             // 
             // btnCheckStatus
             // 
-            btnCheckStatus.Location = new Point(473, 242);
+            btnCheckStatus.Location = new Point(125, 200);
             btnCheckStatus.Name = "btnCheckStatus";
-            btnCheckStatus.Size = new Size(124, 37);
+            btnCheckStatus.Size = new Size(150, 50);
             btnCheckStatus.TabIndex = 3;
             btnCheckStatus.Text = "Kiểm tra";
             btnCheckStatus.UseVisualStyleBackColor = true;
@@ -74,26 +80,50 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(473, 330);
+            btnCancel.Location = new Point(125, 275);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(124, 37);
+            btnCancel.Size = new Size(150, 50);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Hủy giao dịch";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // lbTaoTaiKhoan
+            // 
+            lbTaoTaiKhoan.AutoSize = true;
+            lbTaoTaiKhoan.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTaoTaiKhoan.ForeColor = Color.Black;
+            lbTaoTaiKhoan.Location = new Point(116, 20);
+            lbTaoTaiKhoan.Name = "lbTaoTaiKhoan";
+            lbTaoTaiKhoan.Size = new Size(368, 35);
+            lbTaoTaiKhoan.TabIndex = 16;
+            lbTaoTaiKhoan.Text = "Nạp tiền vào donate cho app";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(189, 195, 199);
+            panel1.Controls.Add(btnCancel);
+            panel1.Controls.Add(btnCheckStatus);
+            panel1.Controls.Add(btnConfirm);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(txbAmount);
+            panel1.Location = new Point(100, 75);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(400, 350);
+            panel1.TabIndex = 17;
+            // 
             // PopupPay
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnCancel);
-            Controls.Add(btnCheckStatus);
-            Controls.Add(btnConfirm);
-            Controls.Add(label1);
-            Controls.Add(txbAmount);
+            BackColor = Color.FromArgb(52, 152, 219);
+            ClientSize = new Size(582, 453);
+            Controls.Add(panel1);
+            Controls.Add(lbTaoTaiKhoan);
             Name = "PopupPay";
             Text = "PopupPay";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -105,5 +135,7 @@
         private Button btnConfirm;
         private Button btnCheckStatus;
         private Button btnCancel;
+        private Label lbTaoTaiKhoan;
+        private Panel panel1;
     }
 }

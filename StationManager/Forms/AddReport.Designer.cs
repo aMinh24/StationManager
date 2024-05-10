@@ -45,9 +45,10 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.FromArgb(189, 195, 199);
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38.56383F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 61.43617F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.1460667F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76.8539352F));
             tableLayoutPanel1.Controls.Add(button2, 1, 3);
             tableLayoutPanel1.Controls.Add(txbTitle, 1, 0);
             tableLayoutPanel1.Controls.Add(txbContent, 1, 1);
@@ -57,21 +58,21 @@
             tableLayoutPanel1.Controls.Add(label4, 0, 2);
             tableLayoutPanel1.Controls.Add(txbEmployeeId, 1, 4);
             tableLayoutPanel1.Controls.Add(label5, 0, 4);
-            tableLayoutPanel1.Location = new Point(86, 64);
+            tableLayoutPanel1.Location = new Point(100, 75);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Size = new Size(376, 433);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.7050362F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 31.4148674F));
+            tableLayoutPanel1.Size = new Size(400, 400);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Location = new Point(279, 234);
+            button2.Location = new Point(303, 216);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 4;
@@ -81,26 +82,26 @@
             // txbTitle
             // 
             txbTitle.Dock = DockStyle.Top;
-            txbTitle.Location = new Point(148, 3);
+            txbTitle.Location = new Point(95, 3);
             txbTitle.Name = "txbTitle";
-            txbTitle.Size = new Size(225, 27);
+            txbTitle.Size = new Size(302, 27);
             txbTitle.TabIndex = 1;
             // 
             // txbContent
             // 
             txbContent.Dock = DockStyle.Top;
-            txbContent.Location = new Point(148, 104);
+            txbContent.Location = new Point(95, 95);
             txbContent.Name = "txbContent";
-            txbContent.Size = new Size(225, 27);
+            txbContent.Size = new Size(302, 27);
             txbContent.TabIndex = 2;
             // 
             // txbFile
             // 
             txbFile.Dock = DockStyle.Top;
-            txbFile.Location = new Point(148, 205);
+            txbFile.Location = new Point(95, 187);
             txbFile.Name = "txbFile";
             txbFile.ReadOnly = true;
-            txbFile.Size = new Size(225, 27);
+            txbFile.Size = new Size(302, 27);
             txbFile.TabIndex = 3;
             // 
             // label2
@@ -115,7 +116,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(3, 101);
+            label3.Location = new Point(3, 92);
             label3.Name = "label3";
             label3.Size = new Size(71, 20);
             label3.TabIndex = 6;
@@ -124,7 +125,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 202);
+            label4.Location = new Point(3, 184);
             label4.Name = "label4";
             label4.Size = new Size(32, 20);
             label4.TabIndex = 7;
@@ -133,45 +134,51 @@
             // txbEmployeeId
             // 
             txbEmployeeId.Dock = DockStyle.Top;
-            txbEmployeeId.Location = new Point(148, 335);
+            txbEmployeeId.Location = new Point(95, 285);
             txbEmployeeId.Name = "txbEmployeeId";
-            txbEmployeeId.Size = new Size(225, 27);
+            txbEmployeeId.Size = new Size(302, 27);
             txbEmployeeId.TabIndex = 13;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(3, 332);
+            label5.Location = new Point(3, 282);
             label5.Name = "label5";
-            label5.Size = new Size(94, 20);
+            label5.Size = new Size(67, 40);
             label5.TabIndex = 12;
             label5.Text = "ID Nhân viên";
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(499, 468);
+            btnAdd.BackColor = Color.White;
+            btnAdd.FlatAppearance.BorderColor = Color.FromArgb(78, 112, 43);
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.Black;
+            btnAdd.Location = new Point(234, 499);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(94, 29);
-            btnAdd.TabIndex = 3;
-            btnAdd.Text = "Xác nhận";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
+            btnAdd.Size = new Size(150, 50);
+            btnAdd.TabIndex = 17;
+            btnAdd.Text = "Thêm";
+            btnAdd.UseVisualStyleBackColor = false;
             // 
             // lbTitle
             // 
             lbTitle.AutoSize = true;
-            lbTitle.Font = new Font("Segoe UI", 20F);
-            lbTitle.Location = new Point(165, 9);
+            lbTitle.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTitle.ForeColor = Color.Black;
+            lbTitle.Location = new Point(221, 9);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(236, 46);
-            lbTitle.TabIndex = 4;
-            lbTitle.Text = "Thêm Báo Cáo";
+            lbTitle.Size = new Size(163, 35);
+            lbTitle.TabIndex = 18;
+            lbTitle.Text = "Tạo báo cáo";
             // 
             // AddReport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(605, 509);
+            BackColor = Color.FromArgb(52, 152, 219);
+            ClientSize = new Size(582, 580);
             Controls.Add(lbTitle);
             Controls.Add(btnAdd);
             Controls.Add(tableLayoutPanel1);
@@ -192,10 +199,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button btnAdd;
         private Button button2;
         private Label label5;
         private TextBox txbEmployeeId;
+        private Button btnAdd;
         private Label lbTitle;
     }
 }
