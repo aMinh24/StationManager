@@ -21,12 +21,6 @@ namespace StationManager.Forms
         {
             InitializeComponent();
         }
-        public HomePage(Account acc)
-        {
-            InitializeComponent();
-            this.owner = acc;
-            lbBalance.Text = $"{owner.balance} VNĐ";
-        }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
@@ -41,12 +35,6 @@ namespace StationManager.Forms
             panel1.BackColor = Color.FromArgb(128, 192, 192, 192);
             label1 .BackColor = Color.Transparent;
             pictureBox1.BackColor = Color.Transparent;
-        }
-
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            ViewAccount viewAccount = new ViewAccount();
-            viewAccount.Show();
         }
 
         private void btnStation_Click(object sender, EventArgs e)
