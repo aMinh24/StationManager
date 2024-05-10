@@ -35,12 +35,13 @@ namespace StationManager.Forms
         }
         private async void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (txbAmount.Text == null) { 
-                MessageBox.Show("Không được nạp 0đ"); 
+            if (string.IsNullOrEmpty(txbAmount.Text))
+            {
+                MessageBox.Show("Không được nạp 0đ");
                 return;
             }
             int amount = int.Parse(txbAmount.Text);
-            if (amount < 5000) { MessageBox.Show("Không được nạp dưới 5000đ"); }
+            if (amount < 5000) { MessageBox.Show("Không được nạp dưới 5000đ"); return; }
             curBill = await BillDAO.CreateBill(amount, owner.LoginID);
             Process.Start(new ProcessStartInfo
             {
@@ -53,7 +54,7 @@ namespace StationManager.Forms
         {
             if (curBill == null) { MessageBox.Show("Đang không có giao dịch nào!"); return; }
             string status = await PayService.GetStatusPayment(curBill.id);
-            if(status == "PAID")
+            if (status == "PAID")
             {
                 AccountDAO.Instance.ChargeAccount(owner.LoginID, owner.balance + curBill.total);
                 MessageBox.Show("Nạp thành công");
@@ -71,7 +72,7 @@ namespace StationManager.Forms
 
         private async void btnCancel_Click(object sender, EventArgs e)
         {
-            if(curBill == null) return;
+            if (curBill == null) return;
             string status = await PayService.GetStatusPayment(curBill.id);
             if (status == "PAID") return;
             PayService.CancelPayment(curBill.id);
