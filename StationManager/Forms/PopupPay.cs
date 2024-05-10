@@ -22,7 +22,12 @@ namespace StationManager.Forms
         public PopupPay()
         {
             InitializeComponent();
+            panel1.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 20, 20));
         }
+
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+
         public PopupPay(Account owner)
         {
             InitializeComponent();
@@ -30,6 +35,10 @@ namespace StationManager.Forms
         }
         private async void btnConfirm_Click(object sender, EventArgs e)
         {
+            if (txbAmount.Text == null) { 
+                MessageBox.Show("Không được nạp 0đ"); 
+                return;
+            }
             int amount = int.Parse(txbAmount.Text);
             if (amount < 5000) { MessageBox.Show("Không được nạp dưới 5000đ"); }
             curBill = await BillDAO.CreateBill(amount, owner.LoginID);

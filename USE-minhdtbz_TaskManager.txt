@@ -1,0 +1,127 @@
+USE [minhdtbz_TaskManager]
+GO
+/****** Object:  Table [dbo].[Account]    Script Date: 5/3/2024 10:49:06 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Account](
+	[LoginId] [varchar](100) NOT NULL,
+	[Password] [varchar](100) NOT NULL,
+	[Username] [varchar](100) NOT NULL,
+	[Email] [varchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[LoginId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[Email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Employee]    Script Date: 5/3/2024 10:49:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Employee](
+	[EmployeeId] [varchar](100) NOT NULL,
+	[LoginId] [varchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[EmployeeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Report]    Script Date: 5/3/2024 10:49:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Report](
+	[ReportId] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](100) NOT NULL,
+	[Content] [nvarchar](1000) NOT NULL,
+	[FileUpload] [varchar](100) NULL,
+	[TimeSent] [datetime] NOT NULL,
+	[EmployeeId] [varchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ReportId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Request]    Script Date: 5/3/2024 10:49:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Request](
+	[RequestId] [varchar](100) NOT NULL,
+	[Title] [nvarchar](100) NOT NULL,
+	[Content] [nvarchar](100) NOT NULL,
+	[TimeSent] [datetime] NOT NULL,
+	[Status] [nvarchar](100) NOT NULL,
+	[LoginId] [varchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RequestId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Station]    Script Date: 5/3/2024 10:49:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Station](
+	[StationId] [varchar](100) NOT NULL,
+	[Address] [nvarchar](100) NOT NULL,
+	[TotalPort] [int] NOT NULL,
+	[TotalActivePort] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[StationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Task]    Script Date: 5/3/2024 10:49:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Task](
+	[Title] [varchar](100) NOT NULL,
+	[Content] [nvarchar](100) NOT NULL,
+	[TaskId] [varchar](100) NOT NULL,
+	[TimeStart] [datetime] NOT NULL,
+	[TimeEnd] [datetime] NOT NULL,
+	[EmployeeId] [varchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[TaskId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD FOREIGN KEY([LoginId])
+REFERENCES [dbo].[Account] ([LoginId])
+GO
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD FOREIGN KEY([LoginId])
+REFERENCES [dbo].[Account] ([LoginId])
+GO
+ALTER TABLE [dbo].[Report]  WITH CHECK ADD FOREIGN KEY([EmployeeId])
+REFERENCES [dbo].[Employee] ([EmployeeId])
+GO
+ALTER TABLE [dbo].[Request]  WITH CHECK ADD FOREIGN KEY([LoginId])
+REFERENCES [dbo].[Account] ([LoginId])
+GO
+ALTER TABLE [dbo].[Request]  WITH CHECK ADD FOREIGN KEY([LoginId])
+REFERENCES [dbo].[Account] ([LoginId])
+GO
+ALTER TABLE [dbo].[Task]  WITH CHECK ADD FOREIGN KEY([EmployeeId])
+REFERENCES [dbo].[Employee] ([EmployeeId])
+GO
+ALTER TABLE [dbo].[Task]  WITH CHECK ADD FOREIGN KEY([EmployeeId])
+REFERENCES [dbo].[Employee] ([EmployeeId])
+GO

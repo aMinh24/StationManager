@@ -119,9 +119,9 @@ namespace StationManager.Forms
             string loginID = tbLoginID.Text;
             bool isDisable = AccountDAO.Instance.disableAccount(loginID);
             if(isDisable) 
-                { MessageBox.Show("Vô hiệu tài khoản thành công"); refreshListAccount(); cbPhanLoai_SelectedIndexChanged(sender, e); }
-            else 
-                { MessageBox.Show("Vô hiệu tài khoản thất bại"); }
+            { MessageBox.Show("Vô hiệu tài khoản thành công"); refreshListAccount(); cbPhanLoai_SelectedIndexChanged(sender, e); }
+            else
+            { MessageBox.Show("Vô hiệu tài khoản thất bại"); }
         }
     }
 }

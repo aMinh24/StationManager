@@ -40,74 +40,92 @@
             lbLoginID = new Label();
             lbTaoTaiKhoan = new Label();
             btnTaoTaiKhoan = new Button();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tbEmpID
             // 
             tbEmpID.BackColor = Color.White;
             tbEmpID.BorderStyle = BorderStyle.FixedSingle;
-            tbEmpID.Location = new Point(12, 226);
+            tbEmpID.Font = new Font("Segoe UI", 12F);
+            tbEmpID.Location = new Point(50, 350);
+            tbEmpID.Margin = new Padding(3, 4, 3, 4);
             tbEmpID.Name = "tbEmpID";
-            tbEmpID.Size = new Size(146, 23);
+            tbEmpID.Size = new Size(300, 34);
             tbEmpID.TabIndex = 5;
             // 
             // lbEmpID
             // 
             lbEmpID.AutoSize = true;
-            lbEmpID.Location = new Point(12, 208);
+            lbEmpID.Font = new Font("Segoe UI", 12F);
+            lbEmpID.ForeColor = Color.Black;
+            lbEmpID.Location = new Point(50, 318);
             lbEmpID.Name = "lbEmpID";
-            lbEmpID.Size = new Size(73, 15);
+            lbEmpID.Size = new Size(122, 28);
             lbEmpID.TabIndex = 5;
             lbEmpID.Text = "Employee ID";
             // 
             // tbEmail
             // 
             tbEmail.BorderStyle = BorderStyle.FixedSingle;
-            tbEmail.Location = new Point(207, 166);
+            tbEmail.Font = new Font("Segoe UI", 12F);
+            tbEmail.Location = new Point(50, 450);
+            tbEmail.Margin = new Padding(3, 4, 3, 4);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(146, 23);
+            tbEmail.Size = new Size(300, 34);
             tbEmail.TabIndex = 4;
             // 
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(207, 148);
+            lbEmail.Font = new Font("Segoe UI", 12F);
+            lbEmail.ForeColor = Color.Black;
+            lbEmail.Location = new Point(50, 418);
             lbEmail.Name = "lbEmail";
-            lbEmail.Size = new Size(36, 15);
+            lbEmail.Size = new Size(59, 28);
             lbEmail.TabIndex = 6;
             lbEmail.Text = "Email";
             // 
             // tbUsername
             // 
             tbUsername.BorderStyle = BorderStyle.FixedSingle;
-            tbUsername.Location = new Point(12, 166);
+            tbUsername.Font = new Font("Segoe UI", 12F);
+            tbUsername.Location = new Point(50, 250);
+            tbUsername.Margin = new Padding(3, 4, 3, 4);
             tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(146, 23);
+            tbUsername.Size = new Size(300, 34);
             tbUsername.TabIndex = 3;
             // 
             // lbUsername
             // 
             lbUsername.AutoSize = true;
-            lbUsername.Location = new Point(12, 148);
+            lbUsername.Font = new Font("Segoe UI", 12F);
+            lbUsername.ForeColor = Color.Black;
+            lbUsername.Location = new Point(50, 218);
             lbUsername.Name = "lbUsername";
-            lbUsername.Size = new Size(60, 15);
+            lbUsername.Size = new Size(99, 28);
             lbUsername.TabIndex = 7;
             lbUsername.Text = "Username";
             // 
             // tbPassword
             // 
             tbPassword.BorderStyle = BorderStyle.FixedSingle;
-            tbPassword.Location = new Point(207, 102);
+            tbPassword.Font = new Font("Segoe UI", 12F);
+            tbPassword.Location = new Point(50, 150);
+            tbPassword.Margin = new Padding(3, 4, 3, 4);
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(146, 23);
+            tbPassword.Size = new Size(300, 34);
             tbPassword.TabIndex = 2;
             // 
             // lbPassword
             // 
             lbPassword.AutoSize = true;
-            lbPassword.Location = new Point(207, 84);
+            lbPassword.Font = new Font("Segoe UI", 12F);
+            lbPassword.ForeColor = Color.Black;
+            lbPassword.Location = new Point(50, 118);
             lbPassword.Name = "lbPassword";
-            lbPassword.Size = new Size(57, 15);
+            lbPassword.Size = new Size(93, 28);
             lbPassword.TabIndex = 8;
             lbPassword.Text = "Password";
             // 
@@ -115,64 +133,86 @@
             // 
             tbLoginID.BackColor = Color.White;
             tbLoginID.BorderStyle = BorderStyle.FixedSingle;
-            tbLoginID.Location = new Point(12, 102);
+            tbLoginID.Font = new Font("Segoe UI", 12F);
+            tbLoginID.Location = new Point(50, 50);
+            tbLoginID.Margin = new Padding(3, 4, 3, 4);
             tbLoginID.Name = "tbLoginID";
-            tbLoginID.Size = new Size(146, 23);
+            tbLoginID.Size = new Size(300, 34);
             tbLoginID.TabIndex = 1;
             // 
             // lbLoginID
             // 
             lbLoginID.AutoSize = true;
-            lbLoginID.Location = new Point(12, 84);
+            lbLoginID.Font = new Font("Segoe UI", 12F);
+            lbLoginID.ForeColor = Color.Black;
+            lbLoginID.Location = new Point(50, 18);
             lbLoginID.Name = "lbLoginID";
-            lbLoginID.Size = new Size(51, 15);
+            lbLoginID.Size = new Size(85, 28);
             lbLoginID.TabIndex = 9;
             lbLoginID.Text = "Login ID";
+            lbLoginID.Click += lbLoginID_Click;
             // 
             // lbTaoTaiKhoan
             // 
             lbTaoTaiKhoan.AutoSize = true;
             lbTaoTaiKhoan.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTaoTaiKhoan.Location = new Point(12, 18);
+            lbTaoTaiKhoan.ForeColor = Color.Black;
+            lbTaoTaiKhoan.Location = new Point(145, 25);
             lbTaoTaiKhoan.Name = "lbTaoTaiKhoan";
-            lbTaoTaiKhoan.Size = new Size(250, 28);
+            lbTaoTaiKhoan.Size = new Size(311, 35);
             lbTaoTaiKhoan.TabIndex = 15;
             lbTaoTaiKhoan.Text = "Tạo tài khoản nhân viên";
             // 
             // btnTaoTaiKhoan
             // 
-            btnTaoTaiKhoan.BackColor = Color.FromArgb(138, 196, 75);
+            btnTaoTaiKhoan.BackColor = Color.White;
             btnTaoTaiKhoan.FlatAppearance.BorderColor = Color.FromArgb(78, 112, 43);
             btnTaoTaiKhoan.FlatStyle = FlatStyle.Flat;
             btnTaoTaiKhoan.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTaoTaiKhoan.ForeColor = Color.White;
-            btnTaoTaiKhoan.Location = new Point(12, 280);
+            btnTaoTaiKhoan.ForeColor = Color.Black;
+            btnTaoTaiKhoan.Location = new Point(225, 605);
+            btnTaoTaiKhoan.Margin = new Padding(3, 4, 3, 4);
             btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
-            btnTaoTaiKhoan.Size = new Size(109, 35);
+            btnTaoTaiKhoan.Size = new Size(150, 50);
             btnTaoTaiKhoan.TabIndex = 16;
             btnTaoTaiKhoan.Text = "Tạo tài khoản";
             btnTaoTaiKhoan.UseVisualStyleBackColor = false;
             btnTaoTaiKhoan.Click += btnTaoTaiKhoan_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(189, 195, 199);
+            panel1.Controls.Add(tbPassword);
+            panel1.Controls.Add(tbEmpID);
+            panel1.Controls.Add(lbEmpID);
+            panel1.Controls.Add(tbEmail);
+            panel1.Controls.Add(lbEmail);
+            panel1.Controls.Add(tbUsername);
+            panel1.Controls.Add(lbUsername);
+            panel1.Controls.Add(lbPassword);
+            panel1.Controls.Add(tbLoginID);
+            panel1.Controls.Add(lbLoginID);
+            panel1.ForeColor = Color.White;
+            panel1.Location = new Point(100, 75);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(400, 510);
+            panel1.TabIndex = 17;
+            // 
             // AddAccount
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(405, 354);
+            BackColor = Color.FromArgb(52, 152, 219);
+            ClientSize = new Size(582, 678);
+            Controls.Add(panel1);
             Controls.Add(btnTaoTaiKhoan);
             Controls.Add(lbTaoTaiKhoan);
-            Controls.Add(tbEmpID);
-            Controls.Add(lbEmpID);
-            Controls.Add(tbEmail);
-            Controls.Add(lbEmail);
-            Controls.Add(tbUsername);
-            Controls.Add(lbUsername);
-            Controls.Add(tbPassword);
-            Controls.Add(lbPassword);
-            Controls.Add(tbLoginID);
-            Controls.Add(lbLoginID);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AddAccount";
             Text = "AddAccount";
+            Load += AddAccount_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,5 +231,6 @@
         private Label lbLoginID;
         private Label lbTaoTaiKhoan;
         private Button btnTaoTaiKhoan;
+        private Panel panel1;
     }
 }

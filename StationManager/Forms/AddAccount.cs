@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,12 @@ namespace StationManager.Forms
         public AddAccount(List<Account> listAccountCombined)
         {
             InitializeComponent();
-            this.listAccountCombined= listAccountCombined;
+            this.listAccountCombined = listAccountCombined;
+            panel1.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 20, 20));
         }
+
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
 
         private void btnTaoTaiKhoan_Click(object sender, EventArgs e)
         {
@@ -39,6 +44,16 @@ namespace StationManager.Forms
             {
                 MessageBox.Show("Tạo tài khoản thất bại");
             }
+        }
+
+        private void lbLoginID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddAccount_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

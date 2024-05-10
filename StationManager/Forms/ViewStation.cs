@@ -101,5 +101,10 @@ namespace StationManager.Forms
         {
             addStation.Visible = true;
         }
+
+        private void lb_ViewStation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
