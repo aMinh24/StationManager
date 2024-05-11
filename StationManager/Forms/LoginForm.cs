@@ -47,6 +47,10 @@ namespace StationManager.Forms
                 home.ShowDialog();
                 this.Show();
             }
+            else
+            {
+                MessageBox.Show("Đăng nhập thất bại");
+            }
         }
         private Account CheckLogin(string loginid, string pass)
         {

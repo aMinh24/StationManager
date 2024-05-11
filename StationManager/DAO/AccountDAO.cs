@@ -44,7 +44,7 @@ namespace StationManager.DAO
         }
         public bool createAccount(string loginID, string password, string username, string email, string? empID = null)
         {
-            string accountQuery = "INSERT INTO Account VALUES ( @loginID , @password , @username , @email , 0 )";
+            string accountQuery = "INSERT INTO Account VALUES ( @loginID , @password , @username , @email , 0 , 0 )";
             string employeeQuery = "INSERT INTO Employee VALUES ( @empID , @loginID )";
             bool accountExecute = DataProvider.Instance.ExcuteNonQuery(accountQuery, new object[] { loginID, password, username, email }) > 0;
             bool employeeExecute = true;
@@ -68,7 +68,13 @@ namespace StationManager.DAO
         {
             string query = "SELECT Account.*, EmployeeId FROM Account, Employee WHERE Account.LoginId = Employee.LoginId AND IsDisable = 0 and Account.loginId = @loginId and password = @password";
             DataTable dt = DataProvider.Instance.ExcuteQuery(query, new object[] { loginID, password });
-            if (dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
+            {
+                return new Account(dt.Rows[0]);
+            }
+            query = "SELECT * FROM Account WHERE IsDisable = 0 and Account.loginId = @loginId and password = @password";
+            dt = DataProvider.Instance.ExcuteQuery(query, new object[] { loginID, password });
+            if (dt.Rows.Count > 0)
             {
                 return new Account(dt.Rows[0]);
             }

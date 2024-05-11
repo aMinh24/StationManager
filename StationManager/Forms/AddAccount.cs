@@ -34,7 +34,7 @@ namespace StationManager.Forms
             string email = tbEmail.Text;
             string empID = tbEmpID.Text;
             if (listAccountCombined.Any(account => account.LoginID.Equals(loginID))) { MessageBox.Show("Login ID đã tồn tại"); return; }
-            if (listAccountCombined.Any(account => account.EmpID.Equals(empID))) { MessageBox.Show("Employee ID đã tồn tại"); return; }
+            if (listAccountCombined.Where(account => account.EmpID != null).Any(account => account.EmpID.Equals(empID))) { MessageBox.Show("Employee ID đã tồn tại"); return; }
             if (listAccountCombined.Any(account => account.Email.Equals(email))) { MessageBox.Show("Email đã tồn tại"); return; }
             if (AccountDAO.Instance.createAccount(loginID, password, username, email, empID))
             {
