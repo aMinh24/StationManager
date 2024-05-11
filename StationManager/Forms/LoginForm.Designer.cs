@@ -49,6 +49,7 @@
             cbUsername.Name = "cbUsername";
             cbUsername.Size = new Size(300, 33);
             cbUsername.TabIndex = 0;
+            cbUsername.SelectedIndexChanged += cbUsername_SelectedIndexChanged;
             // 
             // txbPassword
             // 
@@ -61,6 +62,8 @@
             // chbRemember
             // 
             chbRemember.AutoSize = true;
+            chbRemember.Checked = true;
+            chbRemember.CheckState = CheckState.Checked;
             chbRemember.Font = new Font("Segoe UI", 12F);
             chbRemember.Location = new Point(50, 243);
             chbRemember.Name = "chbRemember";
@@ -150,7 +153,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
