@@ -62,8 +62,6 @@
             // chbRemember
             // 
             chbRemember.AutoSize = true;
-            chbRemember.Checked = true;
-            chbRemember.CheckState = CheckState.Checked;
             chbRemember.Font = new Font("Segoe UI", 12F);
             chbRemember.Location = new Point(50, 243);
             chbRemember.Name = "chbRemember";
