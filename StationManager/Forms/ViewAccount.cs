@@ -24,8 +24,6 @@ namespace StationManager.Forms
             listUserAccount = AccountDAO.Instance.getListUserAccount();
             cbPhanLoai.SelectedIndex = 0;
             LoadInforBinding();
-            RegAccount reg = new RegAccount();
-            reg.Show();
         }
         private void BindingControl(Control control, string datamember)
         {
