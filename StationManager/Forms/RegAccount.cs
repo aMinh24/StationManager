@@ -30,9 +30,10 @@ namespace StationManager.Forms
             string password = tbPassword.Text;
             string username = tbUsername.Text;
             string email = tbEmail.Text;
+            string role = cb_Role.Text;
             if (listAccountCombined.Any(account => account.LoginID.Equals(loginID))) { MessageBox.Show("Login ID đã tồn tại"); return; }
             if (listAccountCombined.Any(account => account.Email.Equals(email))) { MessageBox.Show("Email đã tồn tại"); return; }
-            if (AccountDAO.Instance.createAccount(loginID, password, username, email))
+            if (AccountDAO.Instance.createAccount(loginID, password, username, email, role))
             {
                 MessageBox.Show("Đăng ký thành công");
             }
@@ -40,6 +41,11 @@ namespace StationManager.Forms
             {
                 MessageBox.Show("Đăng ký thất bại");
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

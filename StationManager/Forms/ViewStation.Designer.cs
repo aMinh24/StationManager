@@ -32,6 +32,9 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewStation));
             dtgv_Station = new DataGridView();
+            lb_ViewStation = new Label();
+            btn_Delete = new Button();
+            btn_Add = new Button();
             IsChecked = new DataGridViewCheckBoxColumn();
             StationId = new DataGridViewTextBoxColumn();
             Address = new DataGridViewTextBoxColumn();
@@ -39,9 +42,6 @@
             TotalActivePort = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
-            lb_ViewStation = new Label();
-            btn_Delete = new Button();
-            btn_Add = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgv_Station).BeginInit();
             SuspendLayout();
             // 
@@ -51,6 +51,7 @@
             dtgv_Station.AllowUserToDeleteRows = false;
             dtgv_Station.AllowUserToResizeColumns = false;
             dtgv_Station.AllowUserToResizeRows = false;
+            dtgv_Station.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtgv_Station.BackgroundColor = Color.FromArgb(41, 128, 185);
             dtgv_Station.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgv_Station.Columns.AddRange(new DataGridViewColumn[] { IsChecked, StationId, Address, TotalPort, TotalActivePort, Status, Edit });
@@ -64,6 +65,7 @@
             dtgv_Station.DefaultCellStyle = dataGridViewCellStyle1;
             dtgv_Station.Location = new Point(50, 65);
             dtgv_Station.Name = "dtgv_Station";
+            dtgv_Station.ReadOnly = true;
             dtgv_Station.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
@@ -79,63 +81,6 @@
             dtgv_Station.Size = new Size(900, 500);
             dtgv_Station.TabIndex = 0;
             dtgv_Station.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // IsChecked
-            // 
-            IsChecked.DataPropertyName = "isChecked";
-            IsChecked.HeaderText = "";
-            IsChecked.MinimumWidth = 6;
-            IsChecked.Name = "IsChecked";
-            IsChecked.Width = 50;
-            // 
-            // StationId
-            // 
-            StationId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            StationId.DataPropertyName = "stationId";
-            StationId.HeaderText = "Station Id";
-            StationId.MinimumWidth = 6;
-            StationId.Name = "StationId";
-            // 
-            // Address
-            // 
-            Address.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Address.DataPropertyName = "address";
-            Address.HeaderText = "Address";
-            Address.MinimumWidth = 6;
-            Address.Name = "Address";
-            // 
-            // TotalPort
-            // 
-            TotalPort.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            TotalPort.DataPropertyName = "totalPort";
-            TotalPort.HeaderText = "Toltal Port";
-            TotalPort.MinimumWidth = 6;
-            TotalPort.Name = "TotalPort";
-            // 
-            // TotalActivePort
-            // 
-            TotalActivePort.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            TotalActivePort.DataPropertyName = "totalActivePort";
-            TotalActivePort.HeaderText = "Total Active Port";
-            TotalActivePort.MinimumWidth = 6;
-            TotalActivePort.Name = "TotalActivePort";
-            // 
-            // Status
-            // 
-            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Status.DataPropertyName = "status";
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            Edit.HeaderText = "";
-            Edit.Image = (Image)resources.GetObject("Edit.Image");
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.Width = 50;
             // 
             // lb_ViewStation
             // 
@@ -167,6 +112,72 @@
             btn_Add.Text = "Add";
             btn_Add.UseVisualStyleBackColor = true;
             btn_Add.Click += btn_Add_Click;
+            // 
+            // IsChecked
+            // 
+            IsChecked.DataPropertyName = "isChecked";
+            IsChecked.HeaderText = "";
+            IsChecked.MinimumWidth = 6;
+            IsChecked.Name = "IsChecked";
+            IsChecked.ReadOnly = true;
+            IsChecked.Width = 50;
+            // 
+            // StationId
+            // 
+            StationId.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            StationId.DataPropertyName = "stationId";
+            StationId.HeaderText = "Station Id";
+            StationId.MinimumWidth = 6;
+            StationId.Name = "StationId";
+            StationId.ReadOnly = true;
+            StationId.Width = 102;
+            // 
+            // Address
+            // 
+            Address.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Address.DataPropertyName = "address";
+            Address.HeaderText = "Address";
+            Address.MinimumWidth = 6;
+            Address.Name = "Address";
+            Address.ReadOnly = true;
+            // 
+            // TotalPort
+            // 
+            TotalPort.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            TotalPort.DataPropertyName = "totalPort";
+            TotalPort.HeaderText = "Toltal Port";
+            TotalPort.MinimumWidth = 6;
+            TotalPort.Name = "TotalPort";
+            TotalPort.ReadOnly = true;
+            TotalPort.Width = 105;
+            // 
+            // TotalActivePort
+            // 
+            TotalActivePort.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            TotalActivePort.DataPropertyName = "totalActivePort";
+            TotalActivePort.HeaderText = "Total Active Port";
+            TotalActivePort.MinimumWidth = 6;
+            TotalActivePort.Name = "TotalActivePort";
+            TotalActivePort.ReadOnly = true;
+            TotalActivePort.Width = 146;
+            // 
+            // Status
+            // 
+            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Status.DataPropertyName = "status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Width = 50;
             // 
             // ViewStation
             // 

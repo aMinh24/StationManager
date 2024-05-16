@@ -42,11 +42,11 @@ namespace StationManager.DAO
             string query = "UPDATE ACCOUNT SET Password = @Password , Username = @Username , Email = @Email WHERE LoginId = @LoginID";
             return DataProvider.Instance.ExcuteNonQuery(query, new object[] { password, username, email, loginID }) > 0;
         }
-        public bool createAccount(string loginID, string password, string username, string email, string? empID = null)
+        public bool createAccount(string loginID, string password, string username, string email, string role, string? empID = null)
         {
-            string accountQuery = "INSERT INTO Account VALUES ( @loginID , @password , @username , @email , 0 )";
+            string accountQuery = "INSERT INTO Account VALUES ( @loginID , @password , @username , @email , 0 , 0 , @Role )";
             string employeeQuery = "INSERT INTO Employee VALUES ( @empID , @loginID )";
-            bool accountExecute = DataProvider.Instance.ExcuteNonQuery(accountQuery, new object[] { loginID, password, username, email }) > 0;
+            bool accountExecute = DataProvider.Instance.ExcuteNonQuery(accountQuery, new object[] { loginID, password, username, email, role }) > 0;
             bool employeeExecute = true;
             if (empID != null)
             {
@@ -78,6 +78,13 @@ namespace StationManager.DAO
         {
             string query = $"update account set balance = '{total}' where loginId = '{loginId}'";
             DataProvider.Instance.ExcuteNonQuery(query);
+        }
+
+        public static string GetRole(string loginId) 
+        {
+            string query = "SELECT Role FROM Account WHERE LoginId = @LoginId";
+            DataTable dt = DataProvider.Instance.ExcuteQuery(query, new object[] {loginId});
+            return dt.Rows[0]["Role"].ToString();        
         }
     }
 }

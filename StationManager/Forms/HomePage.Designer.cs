@@ -39,13 +39,14 @@
             panel1 = new Panel();
             lbBalance = new TextBox();
             pictureBox1 = new PictureBox();
+            lb_Welcom = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnAccount
             // 
-            btnAccount.Location = new Point(50, 125);
+            btnAccount.Location = new Point(50, 500);
             btnAccount.Name = "btnAccount";
             btnAccount.Size = new Size(150, 50);
             btnAccount.TabIndex = 0;
@@ -55,7 +56,7 @@
             // 
             // btnStation
             // 
-            btnStation.Location = new Point(50, 200);
+            btnStation.Location = new Point(50, 125);
             btnStation.Name = "btnStation";
             btnStation.Size = new Size(150, 50);
             btnStation.TabIndex = 1;
@@ -65,7 +66,7 @@
             // 
             // btnRequest
             // 
-            btnRequest.Location = new Point(50, 275);
+            btnRequest.Location = new Point(50, 200);
             btnRequest.Name = "btnRequest";
             btnRequest.Size = new Size(150, 50);
             btnRequest.TabIndex = 2;
@@ -85,7 +86,7 @@
             // 
             // btnPay
             // 
-            btnPay.Location = new Point(50, 500);
+            btnPay.Location = new Point(50, 275);
             btnPay.Name = "btnPay";
             btnPay.Size = new Size(150, 50);
             btnPay.TabIndex = 4;
@@ -97,7 +98,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(44, 575);
+            label1.Location = new Point(50, 575);
             label1.Name = "label1";
             label1.Size = new Size(95, 31);
             label1.TabIndex = 5;
@@ -116,6 +117,7 @@
             // panel1
             // 
             panel1.Controls.Add(lbBalance);
+            panel1.Controls.Add(btnAccount);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnTask);
             panel1.Controls.Add(btnPay);
@@ -123,7 +125,6 @@
             panel1.Controls.Add(btnReport);
             panel1.Controls.Add(btnRequest);
             panel1.Controls.Add(btnStation);
-            panel1.Controls.Add(btnAccount);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -134,7 +135,7 @@
             // 
             lbBalance.BorderStyle = BorderStyle.FixedSingle;
             lbBalance.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbBalance.Location = new Point(50, 610);
+            lbBalance.Location = new Point(50, 609);
             lbBalance.Name = "lbBalance";
             lbBalance.Size = new Size(150, 38);
             lbBalance.TabIndex = 9;
@@ -149,6 +150,18 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
+            // lb_Welcom
+            // 
+            lb_Welcom.AutoSize = true;
+            lb_Welcom.Dock = DockStyle.Top;
+            lb_Welcom.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lb_Welcom.ForeColor = Color.Black;
+            lb_Welcom.Location = new Point(250, 0);
+            lb_Welcom.Name = "lb_Welcom";
+            lb_Welcom.Size = new Size(393, 50);
+            lb_Welcom.TabIndex = 10;
+            lb_Welcom.Text = "Welcom back Admin!";
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -156,6 +169,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1062, 673);
+            Controls.Add(lb_Welcom);
             Controls.Add(panel1);
             DoubleBuffered = true;
             Name = "HomePage";
@@ -164,6 +178,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -178,5 +193,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private TextBox lbBalance;
+        private Label lb_Welcom;
     }
 }

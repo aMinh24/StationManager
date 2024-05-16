@@ -39,6 +39,8 @@
             lbPassword = new Label();
             lbTaoTaiKhoan = new Label();
             panel1 = new Panel();
+            cb_Role = new ComboBox();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,7 +71,7 @@
             btnTaoTaiKhoan.FlatAppearance.BorderColor = Color.FromArgb(78, 112, 43);
             btnTaoTaiKhoan.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTaoTaiKhoan.ForeColor = Color.Black;
-            btnTaoTaiKhoan.Location = new Point(225, 520);
+            btnTaoTaiKhoan.Location = new Point(225, 620);
             btnTaoTaiKhoan.Margin = new Padding(3, 4, 3, 4);
             btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
             btnTaoTaiKhoan.Size = new Size(150, 50);
@@ -151,6 +153,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(189, 195, 199);
+            panel1.Controls.Add(cb_Role);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(tbEmail);
             panel1.Controls.Add(lbEmail);
             panel1.Controls.Add(tbUsername);
@@ -161,15 +165,36 @@
             panel1.Controls.Add(lbLoginID);
             panel1.Location = new Point(100, 75);
             panel1.Name = "panel1";
-            panel1.Size = new Size(400, 410);
+            panel1.Size = new Size(400, 510);
             panel1.TabIndex = 28;
+            // 
+            // cb_Role
+            // 
+            cb_Role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_Role.FormattingEnabled = true;
+            cb_Role.Items.AddRange(new object[] { "User", "Admin" });
+            cb_Role.Location = new Point(50, 449);
+            cb_Role.Name = "cb_Role";
+            cb_Role.Size = new Size(300, 36);
+            cb_Role.TabIndex = 24;
+            cb_Role.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(50, 418);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 28);
+            label1.TabIndex = 23;
+            label1.Text = "Role";
             // 
             // RegAccount
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(52, 152, 219);
-            ClientSize = new Size(582, 603);
+            ClientSize = new Size(582, 703);
             Controls.Add(btnTaoTaiKhoan);
             Controls.Add(panel1);
             Controls.Add(lbTaoTaiKhoan);
@@ -195,5 +220,7 @@
         private Label lbPassword;
         private Label lbTaoTaiKhoan;
         private Panel panel1;
+        private Label label1;
+        private ComboBox cb_Role;
     }
 }
