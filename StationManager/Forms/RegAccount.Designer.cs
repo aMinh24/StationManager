@@ -69,6 +69,7 @@
             // 
             btnTaoTaiKhoan.BackColor = Color.White;
             btnTaoTaiKhoan.FlatAppearance.BorderColor = Color.FromArgb(78, 112, 43);
+            btnTaoTaiKhoan.FlatStyle = FlatStyle.Flat;
             btnTaoTaiKhoan.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTaoTaiKhoan.ForeColor = Color.Black;
             btnTaoTaiKhoan.Location = new Point(225, 620);

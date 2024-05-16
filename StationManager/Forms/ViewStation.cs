@@ -85,6 +85,10 @@ namespace StationManager.Forms
                 dtgv_Station.DataSource = tempList;
                 foreach (Station stat in stationList)
                 {
+                    if (stat.IsChecked == false)
+                    {
+                        continue;
+                    }
                     if (stat.IsChecked && stat.Status.Equals("Dừng hoạt động vĩnh viễn"))
                     {
                         stationIdList.Add(stat.StationId);

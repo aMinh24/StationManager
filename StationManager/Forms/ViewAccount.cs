@@ -24,8 +24,6 @@ namespace StationManager.Forms
             listUserAccount = AccountDAO.Instance.getListUserAccount();
             cbPhanLoai.SelectedIndex = 0;
             LoadInforBinding();
-            RegAccount reg = new RegAccount();
-            reg.Show();
         }
         private void BindingControl(Control control, string datamember)
         {
@@ -118,7 +116,7 @@ namespace StationManager.Forms
         {
             string loginID = tbLoginID.Text;
             bool isDisable = AccountDAO.Instance.disableAccount(loginID);
-            if (isDisable)
+            if(isDisable) 
             { MessageBox.Show("Vô hiệu tài khoản thành công"); refreshListAccount(); cbPhanLoai_SelectedIndexChanged(sender, e); }
             else
             { MessageBox.Show("Vô hiệu tài khoản thất bại"); }

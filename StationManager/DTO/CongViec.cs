@@ -37,7 +37,7 @@ namespace StationManager.DTO
         public CongViec(DataRow row)
         {
             this.taskID = (string)row["TaskId"];
-            this.employeeID = (string)row["EmployeeId"];
+            this.employeeID = (string) row["EmployeeId"];
             this.taskTitle = (string)row["Title"];
             this.TaskDescription = (string)row["Content"];
             this.taskStart = (DateTime)row["TimeStart"];

@@ -1,4 +1,15 @@
-﻿using StationManager.DAO;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+using StationManager.DAO;
 using StationManager.DTO;
 
 namespace StationManager.Forms
@@ -9,6 +20,12 @@ namespace StationManager.Forms
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            ViewAccount viewAccount = new ViewAccount();
+            viewAccount.Show();
         }
         public HomePage(Account acc)
         {
@@ -28,12 +45,6 @@ namespace StationManager.Forms
                 lbBalance.Location = new System.Drawing.Point(50, 384);
                 lb_Welcom.Text = "Welcom back User!";
             }
-        }
-
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            ViewAccount viewAccount = new ViewAccount();
-            viewAccount.Show();
         }
 
         private void btnStation_Click(object sender, EventArgs e)

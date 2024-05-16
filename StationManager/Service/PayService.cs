@@ -35,7 +35,7 @@ namespace StationManager.Service
                  items, "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 
             CreatePaymentResult createPayment = await payOS.createPaymentLink(paymentData);
-            return new Bill(orderID, total, createPayment.checkoutUrl, createPayment.status);
+            return new Bill(orderID, total,createPayment.checkoutUrl, createPayment.status);
         }
         public static async Task<string> GetStatusPayment(int id)
         {
@@ -49,8 +49,7 @@ namespace StationManager.Service
             try
             {
                 PaymentLinkInformation cancelledPaymentLinkInfo = await payOS.cancelPaymentLink(id);
-            }
-            catch (Exception e)
+            }catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }

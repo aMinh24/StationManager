@@ -49,6 +49,7 @@
             cbUsername.Name = "cbUsername";
             cbUsername.Size = new Size(300, 33);
             cbUsername.TabIndex = 0;
+            cbUsername.SelectedIndexChanged += cbUsername_SelectedIndexChanged;
             // 
             // txbPassword
             // 

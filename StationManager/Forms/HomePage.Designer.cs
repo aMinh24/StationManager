@@ -137,6 +137,7 @@
             lbBalance.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbBalance.Location = new Point(50, 609);
             lbBalance.Name = "lbBalance";
+            lbBalance.ReadOnly = true;
             lbBalance.Size = new Size(150, 38);
             lbBalance.TabIndex = 9;
             // 
