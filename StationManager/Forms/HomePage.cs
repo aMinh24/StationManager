@@ -35,11 +35,21 @@ namespace StationManager.Forms
             panel1.BackColor = Color.FromArgb(128, 192, 192, 192);
             label1 .BackColor = Color.Transparent;
             pictureBox1.BackColor = Color.Transparent;
+            lb_Welcom.BackColor = Color.Transparent;
+            if (AccountDAO.GetRole(owner.LoginID) == "User")
+            {
+                btnAccount.Visible = false;
+                btnTask.Visible = false;
+                btnReport.Visible = false;
+                label1.Location = new System.Drawing.Point(50, 350);
+                lbBalance.Location = new System.Drawing.Point(50, 384);
+                lb_Welcom.Text = "Welcom back User!";
+            }
         }
 
         private void btnStation_Click(object sender, EventArgs e)
         {
-            ViewStation viewStation = new ViewStation();
+            ViewStation viewStation = new ViewStation(owner);
             viewStation.Show();
         }
 

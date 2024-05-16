@@ -18,17 +18,26 @@ namespace StationManager.Forms
 {
     public partial class ViewStation : Form
     {
+        private DTO.Account owner;
+
         AddStation addStation = new AddStation();
         EditStation editStation = new EditStation();
         private List<Station> stationList = new List<Station>();
 
-        public ViewStation()
+        public ViewStation(DTO.Account acc)
         {
             InitializeComponent();
+            this.owner = acc;
             editStation.Visible = false;
             editStation.DataUpdated += EditStation_DataUpdated;
             addStation.DataUpdated += AddStation_DataUpdated;
             loadData();
+            if (AccountDAO.GetRole(owner.LoginID) == "User")
+            {
+                btn_Add.Visible = false;
+                btn_Delete.Visible = false;
+                dtgv_Station.Columns["Edit"].Visible = false;
+            }
         }
 
         private void AddStation_DataUpdated(object? sender, EventArgs e)
@@ -76,6 +85,10 @@ namespace StationManager.Forms
                 dtgv_Station.DataSource = tempList;
                 foreach (Station stat in stationList)
                 {
+                    if (stat.IsChecked == false)
+                    {
+                        continue;
+                    }
                     if (stat.IsChecked && stat.Status.Equals("Dừng hoạt động vĩnh viễn"))
                     {
                         stationIdList.Add(stat.StationId);
