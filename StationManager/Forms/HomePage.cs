@@ -44,6 +44,8 @@ namespace StationManager.Forms
                 label1.Location = new System.Drawing.Point(50, 350);
                 lbBalance.Location = new System.Drawing.Point(50, 384);
                 lb_Welcom.Text = "Welcom back User!";
+                btnStation.Text = "Xem trạm sạc";
+                btnRequest.Text = "Gửi yêu cầu";
             }
         }
 
@@ -55,8 +57,16 @@ namespace StationManager.Forms
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
-            ViewRequest viewRequest = new ViewRequest();
-            viewRequest.Show();
+            if (AccountDAO.GetRole(owner.LoginID) == "User")
+            {
+                AddReport addReport = new AddReport();
+                addReport.Show();
+            }
+            else
+            {
+                ViewRequest viewRequest = new ViewRequest();
+                viewRequest.Show();
+            }
         }
 
         private void btnReport_Click(object sender, EventArgs e)
