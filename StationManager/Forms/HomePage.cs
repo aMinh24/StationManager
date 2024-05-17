@@ -59,8 +59,8 @@ namespace StationManager.Forms
         {
             if (AccountDAO.GetRole(owner.LoginID) == "User")
             {
-                AddReport addReport = new AddReport();
-                addReport.Show();
+                AddRequest rq = new AddRequest(owner.LoginID);
+                rq.Show();
             }
             else
             {
